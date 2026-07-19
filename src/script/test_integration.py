@@ -35,7 +35,7 @@ def section(title):
     print(f"  {title}", flush=True)
     print(f"{'─' * 60}", flush=True)
 
-def http_get(path, timeout=10):
+def http_get(path, timeout=35):
     """Returns (status_code, body_str) or raises."""
     url = BASE_URL + path
     req = urllib.request.Request(url, headers={"User-Agent": "PRDE-IntegrationTest/1.0"})
@@ -177,9 +177,15 @@ def main():
     # 2. Start Next.js dev server
     section("Starting Next.js Dev Server")
     npm_cmd = "npm.cmd" if sys.platform == "win32" else "npm"
+    
+    # Configure env to target the remote Render backend
+    env = os.environ.copy()
+    env["BACKEND_URL"] = "https://zepto-ai-powered-review-discovery-engine.onrender.com"
+    
     server_proc = subprocess.Popen(
         [npm_cmd, "run", "dev"],
         cwd=FRONTEND_DIR,
+        env=env,
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         text=True

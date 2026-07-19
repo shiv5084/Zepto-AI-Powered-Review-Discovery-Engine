@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+export const maxDuration = 60;
+
 export async function GET() {
   // ── 1. Try the Render FastAPI backend (production primary path) ───────────
   const backendUrl = process.env.BACKEND_URL || 'http://127.0.0.1:8000';

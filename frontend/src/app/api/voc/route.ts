@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+export const maxDuration = 60;
+
 export async function GET() {
   // ── 1. Local-dev primary path: ../data/processed/annotated_reviews.json ──
   const envDataPath = process.env.ANNOTATED_REVIEWS_PATH || '../data/processed/annotated_reviews.json';

@@ -3,6 +3,8 @@ import { spawn } from 'child_process';
 import path from 'path';
 import fs from 'fs';
 
+export const maxDuration = 60;
+
 export async function POST() {
   const backendUrl = process.env.BACKEND_URL || 'http://127.0.0.1:8000';
   try {
