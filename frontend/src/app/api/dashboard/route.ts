@@ -7,16 +7,27 @@ export const maxDuration = 60;
 export async function GET() {
   // ── 1. Try the Render FastAPI backend (production primary path) ───────────
   const backendUrl = process.env.BACKEND_URL || 'http://127.0.0.1:8000';
+  
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 4000); // 4 seconds timeout limit
+  
   try {
     const res = await fetch(`${backendUrl}/api/dashboard`, {
-      cache: 'no-store'
+      cache: 'no-store',
+      signal: controller.signal
     });
+    clearTimeout(timeoutId);
     if (res.ok) {
       const data = await res.json();
       return NextResponse.json(data);
     }
-  } catch {
-    console.warn('FastAPI backend unreachable. Trying filesystem fallbacks.');
+  } catch (err: any) {
+    clearTimeout(timeoutId);
+    if (err.name === 'AbortError') {
+      console.warn('FastAPI backend fetch timed out (4s). Trying filesystem fallbacks.');
+    } else {
+      console.warn('FastAPI backend unreachable. Trying filesystem fallbacks:', err.message);
+    }
   }
 
   // ── 2. Local-dev fallback: ../data/dashboard_data.json (relative to frontend/) ──
