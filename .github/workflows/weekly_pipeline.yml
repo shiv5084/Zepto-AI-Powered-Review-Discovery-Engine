@@ -1,0 +1,236 @@
+# ============================================================
+# Zepto PRDE — Weekly Pipeline Scheduler
+# Runs every Monday at 9:20 AM IST (03:50 UTC)
+# Executes the full E2E Python pipeline and commits
+# the fresh dashboard_data.json back to the repository.
+#
+# ERROR POLICY: No silent failures — every step fails loudly.
+#   - All bash blocks use `set -euo pipefail`
+#   - No `continue-on-error` anywhere
+#   - No `|| true` or `|| echo` that suppresses exit codes
+# ============================================================
+
+name: Weekly Pipeline — Monday 9:20 AM IST
+
+on:
+  # ── Scheduled trigger ──────────────────────────────────────
+  # 9:20 AM IST = 03:50 AM UTC  (IST is UTC+05:30)
+  # Cron syntax: minute hour day-of-month month day-of-week
+  # day-of-week: 1 = Monday
+  schedule:
+    - cron: '50 3 * * 1'
+
+  # ── Manual trigger (for testing the workflow) ──────────────
+  workflow_dispatch:
+    inputs:
+      num_records:
+        description: 'Max number of records to process (leave empty for all/Web UI default)'
+        required: false
+        default: ''
+
+env:
+  PYTHON_VERSION: '3.11'
+
+jobs:
+  run-pipeline:
+    name: Run E2E Pipeline & Commit Dashboard Data
+    runs-on: ubuntu-latest
+
+    # Grant write permission so the job can push the committed file
+    permissions:
+      contents: write
+
+    # Fail the whole job immediately if any step exits non-zero
+    # (belt-and-suspenders alongside set -euo pipefail in each run block)
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      # ── 1. Checkout repository ──────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Fetch full history so git push works correctly
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # ── 2. Set up Python ────────────────────────────────────
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+
+      # ── 3. Install Python dependencies ──────────────────────
+      - name: Install Python dependencies
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          echo "[OK] All Python dependencies installed."
+
+      # ── 4. Install Playwright browsers ──────────────────────
+      # Required for Twitter, Trustpilot scrapers
+      - name: Install Playwright Chromium browser
+        run: |
+          set -euo pipefail
+          playwright install chromium
+          playwright install-deps chromium
+          echo "[OK] Playwright Chromium installed."
+
+      # ── 5. Create required data directories ─────────────────
+      - name: Create data directories
+        run: |
+          set -euo pipefail
+          mkdir -p data/raw data/processed
+          echo "[OK] data/raw and data/processed directories ready."
+
+      # ── 6. Verify secrets are set ───────────────────────────
+      - name: Verify repository secrets are configured
+        run: |
+          set -euo pipefail
+          if [ -z "${GROQ_API_KEY}" ]; then
+            echo "[FAIL] GROQ_API_KEY secret is not set in GitHub repository secrets."
+            exit 1
+          fi
+          if [ -z "${GEMINI_API_KEY}" ]; then
+            echo "[FAIL] GEMINI_API_KEY secret is not set in GitHub repository secrets."
+            exit 1
+          fi
+          if [ -z "${NEON_DATABASE_URL}" ]; then
+            echo "[FAIL] NEON_DATABASE_URL secret is not set in GitHub repository secrets."
+            exit 1
+          fi
+          echo "[OK] All required API and Database secrets are present."
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          NEON_DATABASE_URL: ${{ secrets.NEON_DATABASE_URL }}
+
+      # ── 7. Run the full E2E pipeline ────────────────────────
+      - name: Execute E2E Pipeline (all phases)
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          NEON_DATABASE_URL: ${{ secrets.NEON_DATABASE_URL }}
+          PYTHONUNBUFFERED: '1'
+        run: |
+          set -euo pipefail
+          NUM_RECORDS="${{ github.event.inputs.num_records }}"
+          PIPELINE_START=$(date +%s)
+          if [ -n "$NUM_RECORDS" ]; then
+            echo "Running pipeline: python src/main.py --phase all --num-records $NUM_RECORDS"
+            python src/main.py --phase all --num-records "$NUM_RECORDS"
+          else
+            echo "Running pipeline: python src/main.py --phase all"
+            python src/main.py --phase all
+          fi
+          PIPELINE_END=$(date +%s)
+
+          ELAPSED=$((PIPELINE_END - PIPELINE_START))
+          MINS=$((ELAPSED / 60))
+          SECS=$((ELAPSED % 60))
+          echo "[OK] Pipeline completed successfully."
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "⏱  Total pipeline execution time: ${MINS}m ${SECS}s  (${ELAPSED}s)"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+      # ── 8. Verify all required outputs exist ────────────────
+      - name: Verify pipeline outputs
+        run: |
+          set -euo pipefail
+          echo "Verifying generated output files..."
+
+          if [ ! -f data/dashboard_data.json ]; then
+            echo "[FAIL] data/dashboard_data.json was not generated by the pipeline."
+            exit 1
+          fi
+          echo "[OK] data/dashboard_data.json exists."
+
+          if [ ! -f data/weekly_pulse_note.md ]; then
+            echo "[FAIL] data/weekly_pulse_note.md was not generated by the pipeline."
+            exit 1
+          fi
+          echo "[OK] data/weekly_pulse_note.md exists."
+
+          if [ ! -f data/processed/annotated_reviews.json ]; then
+            echo "[FAIL] data/processed/annotated_reviews.json was not generated by the pipeline."
+            exit 1
+          fi
+          echo "[OK] data/processed/annotated_reviews.json exists."
+
+          python -c "
+          import json, sys
+
+          with open('data/dashboard_data.json') as f:
+              d = json.load(f)
+
+          required_top = {'week_ending', 'pulse_note_text', 'total_reviews_analyzed', 'product_discovery_relevant_reviews', 'sentiment_distribution', 'metrics'}
+          missing_top = required_top - set(d.keys())
+          if missing_top:
+              print(f'[FAIL] dashboard_data.json missing top-level keys: {missing_top}')
+              sys.exit(1)
+          print('[OK] Top-level keys present:', sorted(required_top))
+
+          required_metrics = {
+              'repeat_purchase_drivers', 'exploration_barriers', 'discovery_methods',
+              'habit_drivers', 'information_needs', 'top_frustrations', 
+              'underserved_segments', 'unmet_needs', 'opportunities'
+          }
+          missing_metrics = required_metrics - set(d['metrics'].keys())
+          if missing_metrics:
+              print(f'[FAIL] dashboard_data.json missing metrics keys: {missing_metrics}')
+              sys.exit(1)
+          print('[OK] All 9 metrics keys present.')
+          print('[OK] Schema valid — week_ending:', d['week_ending'])
+          "
+          echo "[OK] All output verification checks passed."
+
+      # ── 9. Commit dashboard_data.json back to the repo ─────
+      - name: Commit & push pipeline data
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Copy both data files to frontend/public/ so Vercel serverless functions can read them
+          cp data/dashboard_data.json frontend/public/dashboard_data.json
+          cp data/processed/annotated_reviews.json frontend/public/annotated_reviews.json
+          echo "[OK] Copied data files to frontend/public/"
+
+          # Stage both files and locations
+          git add data/dashboard_data.json
+          git add frontend/public/dashboard_data.json
+          git add data/processed/annotated_reviews.json
+          git add frontend/public/annotated_reviews.json
+
+          # Check if there are actually any changes to commit
+          if git diff --cached --quiet; then
+            echo "[INFO] No changes to data files since last run — skipping commit."
+          else
+            WEEK=$(python -c "from datetime import date; print(date.today().strftime('%Y-%m-%d'))")
+            git commit -m "chore(data): weekly pipeline run — dashboard and VOC data updated ${WEEK} [skip ci]"
+            git push origin HEAD:${{ github.ref_name }}
+            echo "[OK] Data files committed to both data/ and frontend/public/ and pushed to ${{ github.ref_name }}."
+          fi
+
+
+      # ── 10. Upload pipeline.log as artifact ──────────────────
+      # Runs on both success AND failure so errors are always inspectable
+      - name: Upload pipeline log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-log-${{ github.run_number }}
+          path: pipeline.log
+          retention-days: 7
+
+      # ── 11. Upload dashboard JSON as artifact ────────────────
+      - name: Upload dashboard data artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dashboard-data-${{ github.run_number }}
+          path: data/dashboard_data.json
+          retention-days: 30

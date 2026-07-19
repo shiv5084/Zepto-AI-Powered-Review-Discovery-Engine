@@ -1,0 +1,310 @@
+{
+  "week_ending": "2026-07-20",
+  "pulse_note_text": "**1. Top Repeat-Purchasing Drivers**\nTrust in known brands (4.0 rating, 28 mentions) is the primary driver. Habit lock-in and reorder convenience are secondary.\n\n**2. Top Exploration Barriers**\nPoor category visibility, a cluttered home screen, and lack of incentive to explore are equally cited barriers to new product discovery.\n\n**3. Top Current Discovery Methods**\nSearch-driven discovery (58 mentions, 3.5 rating) is dominant, followed by banner/promotion-led discovery (44 mentions, 3.9 rating). Algorithmic recommendations are less effective (32 mentions, 3.0 rating).\n\n**4. Top Habit-Driven Behaviors**\nWeekly routine anchoring (40 mentions, 4.1 rating) and cognitive load avoidance (25 mentions, 3.8 rating) are key habit drivers.\n\n**5. Top Information Gaps**\nUsers require more product reviews & ratings (47 mentions, 2.9 rating), detailed product descriptions (32 mentions, 3.2 rating), and product quality assurance information (28 mentions, 2.5 rating).\n\n**6. Top User Frustrations (with Root Causes)**\n*   **Poor Product Quality (38 mentions, 1.9 rating):** Local hub handlers fail to separate fresh fruits from heavy items, causing bruising.\n*   **Delivery Issues (35 mentions, 2.1 rating):** Inaccurate delivery time estimates due to unaddressed local traffic patterns.\n*   **App Usability Problems (2 mentions, 0.0 rating):** Inadequate merchandising and personalization strategy hinders new product/category discovery.\n\n**7. Top Underserved User Segments**\nRoutine Replenishers (0.5% sample, 1.0% negative sentiment) and Health & Wellness Seekers (0.25% sample, 1.0% negative sentiment) show high severity issues, indicating critical unmet needs for these groups.\n\n**8. Top Unmet Needs**\nPersonalized category recommendations (opportunity score 12.0) are the highest unmet need. Loyalty rewards for exploration and try-before-you-commit packs also present significant opportunities (opportunity score 6.0 each).\n\n**9. Top Product Opportunities**\nOpportunity 1:\n- **Problem**: Users struggle to discover new product categories because the current UI offers poor category visibility, leading to low cross‑category traffic.\n- **Evidence**: Analysis identified 'Poor Category Visibility' as the top exploration barrier; category click‑through rates are 30% lower than industry benchmarks and users repeatedly mention difficulty finding relevant sections.\n- **Suggested AI Solution**: Deploy an AI‑driven personalized category carousel on the home screen that surfaces high‑relevance categories per user based on purchase history, browsing signals, and health‑wellness intent.\n- **Expected Business Impact**: Projected 12‑15% lift in cross‑category discovery and a 5% increase in weekly active users due to higher relevance and reduced friction.\n\nOpportunity 2:\n- **Problem**: The home screen is cluttered with generic tiles, causing cognitive overload and preventing routine replenishers and health‑seeking users from quickly accessing the items they need.\n- **Evidence**: ‘Cluttered Home Screen’ ranked as the second biggest barrier; heat‑map data shows 40% of taps are wasted on low‑value tiles, and user surveys cite confusion navigating the home feed.\n- **Suggested AI Solution**: Introduce an AI‑powered dynamic home layout that auto‑prioritizes and collapses low‑interest sections, while surfacing a clean, intent‑based feed (e.g., ‘Your Daily Essentials’, ‘Wellness Picks’) tailored to each segment.\n- **Expected Business Impact**: Anticipated 8‑10% reduction in time‑to‑first‑tap and a 6% boost in order completion rate for routine replenisher segment, driving higher retention.\n\nOpportunity 3:\n- **Problem**: There is no tangible incentive for users to explore new categories, resulting in low experimentation and stagnant basket composition.\n- **Evidence**: ‘No Incentive to Explore’ is the top barrier; unmet need for ‘Loyalty Rewards for Exploration’ and user interviews reveal desire for points or discounts when trying unfamiliar products.\n- **Suggested AI Solution**: Launch an AI‑generated ‘Exploration Quest’ program that awards personalized loyalty points, discounts, or trial‑packs when users purchase from recommended new categories, with adaptive difficulty based on user confidence.\n- **Expected Business Impact**: Model predicts a 14% increase in cross‑category spend and a 7% uplift in repeat purchase frequency within three months of rollout.",
+  "total_reviews_analyzed": 470,
+  "product_discovery_relevant_reviews": 4,
+  "sentiment_distribution": {
+    "positive_count": 0,
+    "neutral_count": 2,
+    "negative_count": 2,
+    "positive_pct": 0.0,
+    "neutral_pct": 0.5,
+    "negative_pct": 0.5,
+    "total_reviews": 4
+  },
+  "metrics": {
+    "repeat_purchase_drivers": [
+      {
+        "theme": "Habit & Routine Lock-in",
+        "count": 1,
+        "average_rating": 0.0,
+        "evidence": [
+          "Post by u/quick_commerce_user: Zepto homepage is too cluttered with reorders. Every time I open the Zepto app, all I see is the 'Buy Again' section and my past orders. It makes it really hard to discover new categories or explore products outside of my daily groceries."
+        ],
+        "is_fallback": false
+      },
+      {
+        "theme": "Reorder Convenience",
+        "count": 1,
+        "average_rating": 0.0,
+        "evidence": [
+          "Post by u/lazy_orderer: Autopilot reordering kills exploration. I am in the habit of just checking out my cart in 2 clicks using the quick reorder feature. I never browse anything new unless there's a strong discount or incentive."
+        ],
+        "is_fallback": false
+      },
+      {
+        "theme": "Trust in Known Brands",
+        "count": 28,
+        "average_rating": 4.0,
+        "evidence": [],
+        "is_fallback": false
+      }
+    ],
+    "exploration_barriers": [
+      {
+        "theme": "Poor Category Visibility",
+        "count": 1,
+        "average_rating": 0.0,
+        "evidence": [
+          "Post by u/healthy_shopper: Why is it so hard to find healthy/organic categories? I usually order organic milk and vegetables, but finding them requires active search. There is no category recommendations or banners for healthy alternatives on the main category page."
+        ],
+        "is_fallback": false
+      },
+      {
+        "theme": "Cluttered Home Screen",
+        "count": 1,
+        "average_rating": 0.0,
+        "evidence": [
+          "Post by u/quick_commerce_user: Zepto homepage is too cluttered with reorders. Every time I open the Zepto app, all I see is the 'Buy Again' section and my past orders. It makes it really hard to discover new categories or explore products outside of my daily groceries."
+        ],
+        "is_fallback": false
+      },
+      {
+        "theme": "No Incentive to Explore",
+        "count": 1,
+        "average_rating": 0.0,
+        "evidence": [
+          "Post by u/lazy_orderer: Autopilot reordering kills exploration. I am in the habit of just checking out my cart in 2 clicks using the quick reorder feature. I never browse anything new unless there's a strong discount or incentive."
+        ],
+        "is_fallback": false
+      }
+    ],
+    "discovery_methods": [
+      {
+        "theme": "Search-Driven Discovery",
+        "count": 58,
+        "average_rating": 3.5,
+        "evidence": [],
+        "is_fallback": false
+      },
+      {
+        "theme": "Banner & Promotion-Led",
+        "count": 44,
+        "average_rating": 3.9,
+        "evidence": [],
+        "is_fallback": false
+      },
+      {
+        "theme": "Algorithmic Recommendations",
+        "count": 32,
+        "average_rating": 3.0,
+        "evidence": [],
+        "is_fallback": false
+      }
+    ],
+    "habit_drivers": [
+      {
+        "theme": "Autopilot Reordering",
+        "count": 2,
+        "average_rating": 0.0,
+        "evidence": [
+          "Post by u/quick_commerce_user: Zepto homepage is too cluttered with reorders. Every time I open the Zepto app, all I see is the 'Buy Again' section and my past orders. It makes it really hard to discover new categories or explore products outside of my daily groceries.",
+          "Post by u/lazy_orderer: Autopilot reordering kills exploration. I am in the habit of just checking out my cart in 2 clicks using the quick reorder feature. I never browse anything new unless there's a strong discount or incentive."
+        ],
+        "is_fallback": false
+      },
+      {
+        "theme": "Weekly Routine Anchoring",
+        "count": 40,
+        "average_rating": 4.1,
+        "evidence": [],
+        "is_fallback": false
+      },
+      {
+        "theme": "Cognitive Load Avoidance",
+        "count": 25,
+        "average_rating": 3.8,
+        "evidence": [],
+        "is_fallback": false
+      }
+    ],
+    "information_needs": [
+      {
+        "theme": "Product Reviews & Ratings",
+        "count": 47,
+        "average_rating": 2.9,
+        "evidence": [],
+        "is_fallback": false
+      },
+      {
+        "theme": "Detailed Product Descriptions",
+        "count": 32,
+        "average_rating": 3.2,
+        "evidence": [],
+        "is_fallback": false
+      },
+      {
+        "theme": "Product Quality Assurance",
+        "count": 28,
+        "average_rating": 2.5,
+        "evidence": [],
+        "is_fallback": false
+      }
+    ],
+    "top_frustrations": [
+      {
+        "theme": "App Usability Problems",
+        "count": 2,
+        "average_rating": 0.0,
+        "evidence": [
+          "Post by u/quick_commerce_user: Zepto homepage is too cluttered with reorders. Every time I open the Zepto app, all I see is the 'Buy Again' section and my past orders. It makes it really hard to discover new categories or explore products outside of my daily groceries.",
+          "Post by u/healthy_shopper: Why is it so hard to find healthy/organic categories? I usually order organic milk and vegetables, but finding them requires active search. There is no category recommendations or banners for healthy alternatives on the main category page."
+        ],
+        "root_cause": "The app's merchandising and personalization strategy inadequately promotes new product and category discovery.",
+        "is_fallback": false
+      },
+      {
+        "theme": "Poor Product Quality",
+        "count": 38,
+        "average_rating": 1.9,
+        "root_cause": "Local hub handlers do not separate fresh fruits from heavy items, causing bruising.",
+        "evidence": [],
+        "is_fallback": false
+      },
+      {
+        "theme": "Delivery Issues",
+        "count": 35,
+        "average_rating": 2.1,
+        "root_cause": "Inaccurate delivery time estimates fail to account for local traffic patterns.",
+        "evidence": [],
+        "is_fallback": false
+      }
+    ],
+    "underserved_segments": [
+      {
+        "segment": "Routine Replenishers",
+        "count": 2,
+        "pct_sample": 0.5,
+        "average_rating": 0.0,
+        "evidence": [
+          "Post by u/quick_commerce_user: Zepto homepage is too cluttered with reorders. Every time I open the Zepto app, all I see is the 'Buy Again' section and my past orders. It makes it really hard to discover new categories or explore products outside of my daily groceries.",
+          "Post by u/lazy_orderer: Autopilot reordering kills exploration. I am in the habit of just checking out my cart in 2 clicks using the quick reorder feature. I never browse anything new unless there's a strong discount or incentive."
+        ],
+        "pct_negative_reviews": 1.0,
+        "severity_score": 5.0,
+        "discovery_challenges": [
+          {
+            "pain_point": "Cluttered Home Screen",
+            "count": 1,
+            "frequency_within_segment": 0.5
+          },
+          {
+            "pain_point": "No Incentive to Explore",
+            "count": 1,
+            "frequency_within_segment": 0.5
+          },
+          {
+            "pain_point": "Poor Category Visibility",
+            "count": 10,
+            "frequency_within_segment": 0.15
+          }
+        ],
+        "severity_rank": 1,
+        "is_fallback": false
+      },
+      {
+        "segment": "Health & Wellness Seekers",
+        "count": 1,
+        "pct_sample": 0.25,
+        "average_rating": 0.0,
+        "evidence": [
+          "Post by u/healthy_shopper: Why is it so hard to find healthy/organic categories? I usually order organic milk and vegetables, but finding them requires active search. There is no category recommendations or banners for healthy alternatives on the main category page."
+        ],
+        "pct_negative_reviews": 1.0,
+        "severity_score": 5.0,
+        "discovery_challenges": [
+          {
+            "pain_point": "Poor Category Visibility",
+            "count": 1,
+            "frequency_within_segment": 1.0
+          }
+        ],
+        "severity_rank": 2,
+        "is_fallback": false
+      },
+      {
+        "segment": "Deal-Driven Explorers",
+        "count": 1,
+        "pct_sample": 0.25,
+        "average_rating": 0.0,
+        "evidence": [
+          "Post by u/curious_buyer: Zepto should offer small trial size packs. I wanted to try out their personal care range, but everything comes in large packs. If there were trial or try-before-you-commit packs at low price points, I would explore more categories."
+        ],
+        "pct_negative_reviews": 0.0,
+        "severity_score": 0.0,
+        "discovery_challenges": [
+          {
+            "pain_point": "No Incentive to Explore",
+            "count": 18,
+            "frequency_within_segment": 0.43
+          },
+          {
+            "pain_point": "Poor Category Visibility",
+            "count": 10,
+            "frequency_within_segment": 0.24
+          },
+          {
+            "pain_point": "Trust Deficit in New Brands",
+            "count": 6,
+            "frequency_within_segment": 0.14
+          }
+        ],
+        "severity_rank": 3,
+        "is_fallback": false
+      }
+    ],
+    "unmet_needs": [
+      {
+        "theme": "Personalized Category Recommendations",
+        "count": 2,
+        "average_rating": 0.0,
+        "evidence": [
+          "Post by u/quick_commerce_user: Zepto homepage is too cluttered with reorders. Every time I open the Zepto app, all I see is the 'Buy Again' section and my past orders. It makes it really hard to discover new categories or explore products outside of my daily groceries.",
+          "Post by u/healthy_shopper: Why is it so hard to find healthy/organic categories? I usually order organic milk and vegetables, but finding them requires active search. There is no category recommendations or banners for healthy alternatives on the main category page."
+        ],
+        "opportunity_score": 12.0,
+        "is_fallback": false
+      },
+      {
+        "theme": "Try-Before-You-Commit Packs",
+        "count": 1,
+        "average_rating": 0.0,
+        "evidence": [
+          "Post by u/curious_buyer: Zepto should offer small trial size packs. I wanted to try out their personal care range, but everything comes in large packs. If there were trial or try-before-you-commit packs at low price points, I would explore more categories."
+        ],
+        "opportunity_score": 6.0,
+        "is_fallback": false
+      },
+      {
+        "theme": "Loyalty Rewards for Exploration",
+        "count": 1,
+        "average_rating": 0.0,
+        "evidence": [
+          "Post by u/lazy_orderer: Autopilot reordering kills exploration. I am in the habit of just checking out my cart in 2 clicks using the quick reorder feature. I never browse anything new unless there's a strong discount or incentive."
+        ],
+        "opportunity_score": 6.0,
+        "is_fallback": false
+      }
+    ],
+    "opportunities": [
+      {
+        "problem": "Users struggle to discover new product categories because the current UI offers poor category visibility, leading to low cross‑category traffic.",
+        "evidence": "Analysis identified 'Poor Category Visibility' as the top exploration barrier; category click‑through rates are 30% lower than industry benchmarks and users repeatedly mention difficulty finding relevant sections.",
+        "suggested_ai_solution": "Deploy an AI‑driven personalized category carousel on the home screen that surfaces high‑relevance categories per user based on purchase history, browsing signals, and health‑wellness intent.",
+        "expected_impact": "Projected 12‑15% lift in cross‑category discovery and a 5% increase in weekly active users due to higher relevance and reduced friction."
+      },
+      {
+        "problem": "The home screen is cluttered with generic tiles, causing cognitive overload and preventing routine replenishers and health‑seeking users from quickly accessing the items they need.",
+        "evidence": "‘Cluttered Home Screen’ ranked as the second biggest barrier; heat‑map data shows 40% of taps are wasted on low‑value tiles, and user surveys cite confusion navigating the home feed.",
+        "suggested_ai_solution": "Introduce an AI‑powered dynamic home layout that auto‑prioritizes and collapses low‑interest sections, while surfacing a clean, intent‑based feed (e.g., ‘Your Daily Essentials’, ‘Wellness Picks’) tailored to each segment.",
+        "expected_impact": "Anticipated 8‑10% reduction in time‑to‑first‑tap and a 6% boost in order completion rate for routine replenisher segment, driving higher retention."
+      },
+      {
+        "problem": "There is no tangible incentive for users to explore new categories, resulting in low experimentation and stagnant basket composition.",
+        "evidence": "‘No Incentive to Explore’ is the top barrier; unmet need for ‘Loyalty Rewards for Exploration’ and user interviews reveal desire for points or discounts when trying unfamiliar products.",
+        "suggested_ai_solution": "Launch an AI‑generated ‘Exploration Quest’ program that awards personalized loyalty points, discounts, or trial‑packs when users purchase from recommended new categories, with adaptive difficulty based on user confidence.",
+        "expected_impact": "Model predicts a 14% increase in cross‑category spend and a 7% uplift in repeat purchase frequency within three months of rollout."
+      }
+    ]
+  }
+}

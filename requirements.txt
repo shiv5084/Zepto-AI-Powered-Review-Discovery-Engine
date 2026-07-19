@@ -1,0 +1,14 @@
+groq
+pydantic>=2.0
+pandas
+pyyaml
+pytest
+python-dotenv
+click
+beautifulsoup4
+google-play-scraper
+playwright
+fastapi
+uvicorn
+psycopg2-binary
+google-generativeai

@@ -1,0 +1,44 @@
+# Configuration settings for Zepto Review Discovery Engine (PRDE)
+
+paths:
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+  pulse_note_file: "data/weekly_pulse_note.md"
+  dashboard_json_file: "data/dashboard_data.json"
+
+llm:
+  provider: "groq"
+  temperature: 0.1
+  max_tokens: 4096
+  rate_limit:
+    batch_size: 5
+    min_request_interval_seconds: 3.0
+    max_retries: 5
+    initial_backoff_seconds: 5
+    max_backoff_seconds: 120
+    tpm_budget: 8000                  # TPM:8K for GPT-OSS 120B
+
+summarization:
+  provider: "gemini"
+
+ingestion:
+  weeks_lookback: 12
+  sources:
+    - "google_play"
+    - "app_store"
+    - "reddit"
+    - "twitter"
+    - "product_reviews"
+
+# ── Phase 2 LLM Optimization (Strategy 4 + Strategy 5) ──────────────────────
+optimization:
+  enabled: true                    # false = original process_reviews() used (no optimization)
+  sampling:                        # Strategy 4: Stratified Sampling
+    sample_size: 1000              # max reviews sent through LLM; rest are skipped
+    min_floor_sources:             # always take ALL available reviews from these sources
+      - "reddit"
+      - "product_reviews"
+      - "twitter"
+  gate:                            # Strategy 5: Two-Stage Gate Funnel
+    enabled: true                  # false = skip gate, full classify entire sample
+    batch_size: 10                 # gate uses larger batches (short prompt = cheaper)
