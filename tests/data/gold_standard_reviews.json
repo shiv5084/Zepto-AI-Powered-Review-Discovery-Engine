@@ -1,0 +1,32 @@
+[
+  {
+    "text": "Zepto only shows my previous milk and bread orders. I want to discover organic vegetables and new snack brands but they are hidden under sub-menus.",
+    "expected_sentiment": "negative",
+    "expected_segment": "Deal-Driven Explorers",
+    "has_pain_point": true
+  },
+  {
+    "text": "I absolutely love Zepto! Reordering my daily groceries is so fast, takes only two clicks.",
+    "expected_sentiment": "positive",
+    "expected_segment": "Routine Replenishers",
+    "has_pain_point": false
+  },
+  {
+    "text": "It is just a standard delivery app. I search for sugar, buy it, and close the app. Nothing special.",
+    "expected_sentiment": "neutral",
+    "expected_segment": "Routine Replenishers",
+    "has_pain_point": false
+  },
+  {
+    "text": "The search function is horrible. I search for local spices and it only shows sponsored big brands instead of showing local artisan brands.",
+    "expected_sentiment": "negative",
+    "expected_segment": "Local Brand Adapters",
+    "has_pain_point": true
+  },
+  {
+    "text": "I use Zepto for everything now. The app recommendations for recipes are wonderful and let me try new organic dairy brands.",
+    "expected_sentiment": "positive",
+    "expected_segment": "Healthy/Organic Seekers",
+    "has_pain_point": false
+  }
+]

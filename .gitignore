@@ -1,0 +1,77 @@
+# =============================================================================
+# Spotify AI-Powered Review Discovery Engine — .gitignore
+# =============================================================================
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+
+# ── Virtual environment ───────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+ENV/
+
+# ── Environment / Secrets ─────────────────────────────────────────────────────
+.env
+# Keep the template so others know what vars are needed
+!.env.template
+
+# ── Data files (raw & processed — potentially large / sensitive) ──────────────
+data/raw/
+data/processed/
+data/weekly_pulse_note.md
+# dashboard_data.json is intentionally tracked — committed weekly by GitHub Actions
+# so the frontend can read the latest pipeline output from the repo.
+!data/dashboard_data.json
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+pipeline.log
+*.log
+
+# ── pytest / coverage ─────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+*.coveragerc
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── IDE / Editor ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ── Playwright browser binaries ───────────────────────────────────────────────
+playwright-browsers/
+
+# ── spaCy / Presidio NLP model cache ─────────────────────────────────────────
+*.bin
+*.npz
+
+# ── Misc ──────────────────────────────────────────────────────────────────────
+*.bak
+*.tmp
+
+custom doc
+issue.md
+prompt.md
+notes.md
+

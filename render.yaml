@@ -1,0 +1,24 @@
+# ============================================================
+# Zepto PRDE — Render Blueprint Specification (Native Python)
+# ============================================================
+
+services:
+  # ── Backend Web Service ────────────────────────────────────
+  - type: web
+    name: zepto-prde-backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt && playwright install chromium
+    startCommand: uvicorn src.server:app --host 0.0.0.0 --port $PORT
+    plan: free # Can be upgraded to standard starter plans if needed
+    envVars:
+      # Groq API Key for LLM-based theme synthesis
+      - key: GROQ_API_KEY
+        sync: false # Must be set manually in Render Dashboard
+
+      # Disable Python buffering to get real-time stream logs in frontend
+      - key: PYTHONUNBUFFERED
+        value: "1"
+
+      # Python version used by the Native Python runtime on Render
+      - key: PYTHON_VERSION
+        value: "3.11"
