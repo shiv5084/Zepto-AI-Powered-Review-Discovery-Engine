@@ -30,6 +30,17 @@ on:
 
 env:
   PYTHON_VERSION: '3.11'
+  PYTHONUNBUFFERED: '1'
+  GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+  NEON_DATABASE_URL: ${{ secrets.NEON_DATABASE_URL }}
+  GROQ_CLASSIFIER_MODEL: ${{ secrets.GROQ_CLASSIFIER_MODEL || 'openai/gpt-oss-120b' }}
+  GROQ_GATE_MODEL: ${{ secrets.GROQ_GATE_MODEL || 'llama-3.1-8b-instant' }}
+  GEMINI_SUMMARY_MODEL: ${{ secrets.GEMINI_SUMMARY_MODEL || 'gemini-2.5-flash' }}
+  ZEPTO_APPLE_APP_ID: ${{ secrets.ZEPTO_APPLE_APP_ID || '1575323645' }}
+  ZEPTO_ANDROID_PACKAGE: ${{ secrets.ZEPTO_ANDROID_PACKAGE || 'com.zeptoconsumerapp' }}
+  ZEPTO_TWITTER_HANDLE: ${{ secrets.ZEPTO_TWITTER_HANDLE || 'ZeptoNow' }}
+  ZEPTO_TRUSTPILOT_URL: ${{ secrets.ZEPTO_TRUSTPILOT_URL || 'https://www.trustpilot.com/review/zepto.com' }}
 
 jobs:
   run-pipeline:
@@ -103,18 +114,9 @@ jobs:
             exit 1
           fi
           echo "[OK] All required API and Database secrets are present."
-        env:
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          NEON_DATABASE_URL: ${{ secrets.NEON_DATABASE_URL }}
 
       # ── 7. Run the full E2E pipeline ────────────────────────
       - name: Execute E2E Pipeline (all phases)
-        env:
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          NEON_DATABASE_URL: ${{ secrets.NEON_DATABASE_URL }}
-          PYTHONUNBUFFERED: '1'
         run: |
           set -euo pipefail
           NUM_RECORDS="${{ github.event.inputs.num_records }}"

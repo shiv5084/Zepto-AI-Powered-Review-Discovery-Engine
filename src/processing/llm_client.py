@@ -43,17 +43,13 @@ class GroqClient:
         }
         self.rate_limit = {**default_rate_limit, **llm_config.get("rate_limit", {})}
         
-        # Model-agnostic variables (loaded from environment)
-        self.classifier_model = os.environ.get("GROQ_CLASSIFIER_MODEL")
-        self.gate_model = os.environ.get("GROQ_GATE_MODEL")
+        # Model-agnostic variables (loaded from environment with template fallbacks)
+        self.classifier_model = os.environ.get("GROQ_CLASSIFIER_MODEL", "openai/gpt-oss-120b")
+        self.gate_model = os.environ.get("GROQ_GATE_MODEL", "llama-3.1-8b-instant")
         self.api_key = os.environ.get("GROQ_API_KEY")
 
         if not self.api_key:
             raise ValueError("GROQ_API_KEY environment variable is not set in .env")
-        if not self.classifier_model:
-            raise ValueError("GROQ_CLASSIFIER_MODEL environment variable is not set in .env")
-        if not self.gate_model:
-            raise ValueError("GROQ_GATE_MODEL environment variable is not set in .env")
         
         self.client = Groq(api_key=self.api_key)
         logger.info(f"GroqClient successfully initialized. Classifier Model: {self.classifier_model}, Gate Model: {self.gate_model}")
@@ -68,13 +64,11 @@ class GeminiClient:
 
     def __init__(self):
         load_dotenv()
-        self.model_name = os.environ.get("GEMINI_SUMMARY_MODEL")
+        self.model_name = os.environ.get("GEMINI_SUMMARY_MODEL", "gemini-2.5-flash")
         self.api_key = os.environ.get("GEMINI_API_KEY")
 
         if not self.api_key:
             raise ValueError("GEMINI_API_KEY environment variable is not set in .env")
-        if not self.model_name:
-            raise ValueError("GEMINI_SUMMARY_MODEL environment variable is not set in .env")
 
         genai.configure(api_key=self.api_key)
         self.model = genai.GenerativeModel(self.model_name)
