@@ -204,7 +204,7 @@ jobs:
           # Stage both files and locations
           git add data/dashboard_data.json
           git add frontend/public/dashboard_data.json
-          git add data/processed/annotated_reviews.json
+          git add -f data/processed/annotated_reviews.json
           git add frontend/public/annotated_reviews.json
 
           # Check if there are actually any changes to commit
