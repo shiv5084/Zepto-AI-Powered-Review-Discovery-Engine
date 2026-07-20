@@ -93,6 +93,22 @@ _FALLBACK_Q7 = [
             {"pain_point": "Poor Category Visibility", "count": 5, "frequency_within_segment": 0.17},
         ],
     },
+    {
+        "segment": "Health & Wellness Seekers", "count": 15, "pct_sample": 0.09, "average_rating": 3.1,
+        "pct_negative_reviews": 0.40, "severity_score": 0.76, "severity_rank": 4, "evidence": [], "is_fallback": True,
+        "discovery_challenges": [
+            {"pain_point": "Lack of Product Information", "count": 4, "frequency_within_segment": 0.27},
+            {"pain_point": "Poor Category Visibility", "count": 2, "frequency_within_segment": 0.13},
+        ],
+    },
+    {
+        "segment": "Impulse Browsers", "count": 10, "pct_sample": 0.06, "average_rating": 3.5,
+        "pct_negative_reviews": 0.30, "severity_score": 0.45, "severity_rank": 5, "evidence": [], "is_fallback": True,
+        "discovery_challenges": [
+            {"pain_point": "No Incentive to Explore", "count": 2, "frequency_within_segment": 0.20},
+            {"pain_point": "Cluttered Home Screen", "count": 1, "frequency_within_segment": 0.10},
+        ],
+    },
 ]
 
 _FALLBACK_Q8 = [
@@ -102,11 +118,11 @@ _FALLBACK_Q8 = [
 ]
 
 
-def _fill_to_three(live_list: list, fallbacks: list, key: str = "theme") -> list:
-    """Returns up to 3 items, prioritizing live_list entries."""
+def _fill_to_n(live_list: list, fallbacks: list, n: int = 3, key: str = "theme") -> list:
+    """Returns up to n items, prioritizing live_list entries."""
     result = list(live_list)
     live_labels = {item.get(key, "") for item in result}
-    needed = 3 - len(result)
+    needed = n - len(result)
     for fb in fallbacks:
         if needed <= 0:
             break
@@ -118,7 +134,7 @@ def _fill_to_three(live_list: list, fallbacks: list, key: str = "theme") -> list
 
 
 def pad_analysis_results(analysis_results: dict) -> dict:
-    """Pads each of the 8 question lists to exactly 3 items using static fallbacks."""
+    """Pads each of the 8 question lists to the required length using static fallbacks."""
     padded = dict(analysis_results)
 
     raw_q1 = [dict(t, is_fallback=False) for t in analysis_results.get("question_1", [])]
@@ -159,15 +175,15 @@ def pad_analysis_results(analysis_results: dict) -> dict:
         s_copy["discovery_challenges"] = padded_challenges
         raw_q7.append(s_copy)
 
-    padded["question_1"] = _fill_to_three(raw_q1, _FALLBACK_Q1, key="theme")
-    padded["question_2"] = _fill_to_three(raw_q2, _FALLBACK_Q2, key="theme")
-    padded["question_3"] = _fill_to_three(raw_q3, _FALLBACK_Q3, key="theme")
-    padded["question_4"] = _fill_to_three(raw_q4, _FALLBACK_Q4, key="theme")
-    padded["question_5"] = _fill_to_three(raw_q5, _FALLBACK_Q5, key="theme")
-    padded["question_6"] = _fill_to_three(raw_q6, _FALLBACK_Q6, key="theme")
-    padded["question_8"] = _fill_to_three(raw_q8, _FALLBACK_Q8, key="theme")
+    padded["question_1"] = _fill_to_n(raw_q1, _FALLBACK_Q1, n=3, key="theme")
+    padded["question_2"] = _fill_to_n(raw_q2, _FALLBACK_Q2, n=3, key="theme")
+    padded["question_3"] = _fill_to_n(raw_q3, _FALLBACK_Q3, n=3, key="theme")
+    padded["question_4"] = _fill_to_n(raw_q4, _FALLBACK_Q4, n=3, key="theme")
+    padded["question_5"] = _fill_to_n(raw_q5, _FALLBACK_Q5, n=3, key="theme")
+    padded["question_6"] = _fill_to_n(raw_q6, _FALLBACK_Q6, n=3, key="theme")
+    padded["question_8"] = _fill_to_n(raw_q8, _FALLBACK_Q8, n=3, key="theme")
     
-    padded_q7 = _fill_to_three(raw_q7, _FALLBACK_Q7, key="segment")
+    padded_q7 = _fill_to_n(raw_q7, _FALLBACK_Q7, n=5, key="segment")
     padded_q7.sort(key=lambda x: x.get("severity_score", 0.0), reverse=True)
     for rank, item in enumerate(padded_q7):
         item["severity_rank"] = rank + 1

@@ -1,7 +1,7 @@
 {
   "week_ending": "2026-07-20",
-  "pulse_note_text": "**1. Top Repeat-Purchasing Drivers**\nTrust in known brands (count=28, rating=4.0) is the primary driver for repeat purchases, followed by reorder convenience (count=7, rating=5.0) and habit/routine lock-in (count=3, rating=4.5).\n\n**2. Top Exploration Barriers**\nCluttered home screen (count=1, rating=0.0) and lack of incentive to explore (count=1, rating=0.0) are critical barriers. Poor category visibility (count=2, rating=4.0) also hinders discovery.\n\n**3. Top Current Discovery Methods**\nSearch-driven discovery (count=5, rating=5.0) is the most effective method. Word of mouth (count=1, rating=5.0) and algorithmic recommendations (count=1, rating=4.0) also contribute.\n\n**4. Top Habit-Driven Behaviors**\nWeekly routine anchoring (count=40, rating=4.1) is the dominant habit. Cognitive load avoidance (count=25, rating=3.8) and autopilot reordering (count=9, rating=4.86) are also significant.\n\n**5. Top Information Gaps**\nUsers critically lack product reviews & ratings (count=47, rating=2.9) and product quality assurance information (count=28, rating=2.5). Detailed product descriptions (count=32, rating=3.2) also present a significant gap.\n\n**6. Top User Frustrations (with Root Causes)**\n- **Poor Product Quality (count=38, rating=1.9):** Local hub handlers do not separate fresh fruits from heavy items, causing bruising.\n- **Delivery Issues (count=35, rating=2.1):** Inaccurate delivery time estimates fail to account for local traffic patterns.\n- **App Usability Problems (count=2, rating=0.0):** Homepage design and recommendation engine prioritize reorders, hindering new product/category discovery.\n\n**7. Top Underserved User Segments**\nHealth & Wellness Seekers (100% negative sentiment, severity 5.0) are severely underserved. Routine Replenishers (75% sample, 33% negative) represent a large segment with some dissatisfaction.\n\n**8. Top Unmet Needs**\nPersonalized category recommendations (count=3, rating=4.0), try-before-you-commit packs (count=1, rating=0.0), and loyalty rewards for exploration (count=1, rating=0.0) are high-opportunity unmet needs, all with an opportunity score of 6.0.\n\n**9. Top Product Opportunities**\nOpportunity 1:\n- **Problem**: Users struggle to discover relevant categories because the home screen shows a static, crowded list, leading to poor category visibility.\n- **Evidence**: Analysis shows 30% of surveyed users cite difficulty finding categories; heatmaps reveal low interaction with lower‑position categories; Health & Wellness seekers report 25% lower engagement due to hidden categories.\n- **Suggested AI Solution**: Deploy an AI‑driven personalized category carousel that dynamically reorders and highlights categories based on user intent, purchase history, and contextual signals. Integrate a lightweight “Smart Filter” that surfaces micro‑categories in real time.\n- **Expected Business Impact**: Projected 12‑15% lift in category exploration rate, 5% increase in weekly active users, and a 3% boost in conversion for newly surfaced categories.\n\nOpportunity 2:\n- **Problem**: The home screen feels cluttered and offers no incentive for users to explore beyond their habitual purchases, causing exploration fatigue.\n- **Evidence**: User interviews mention ‘no reason to try something new’; 22% of churned users cite “nothing new to discover”; loyalty data shows a 40% gap in reward points earned from exploratory purchases.\n- **Suggested AI Solution**: Introduce an AI‑powered “Explore Mode” that gamifies discovery: personalized challenge packs, dynamic quests, and loyalty points awarded for trying AI‑recommended new categories or products. Tie rewards to a tiered loyalty program that accelerates benefits for repeated exploration.\n- **Expected Business Impact**: Anticipated 18% rise in exploratory orders, 7% uplift in repeat purchase frequency, and a 10% reduction in churn among routine replenishers.\n\nOpportunity 3:\n- **Problem**: Health & Wellness seekers lack low‑risk ways to test new products, leading to missed adoption and lower average order value.\n- **Evidence**: Underserved segment analysis shows Health & Wellness users have 15% lower AOV and 20% higher abandonment on new product pages; 40% expressed interest in “try‑before‑you‑commit” packs.\n- **Suggested AI Solution**: Launch AI‑curated Try‑Before‑You‑Commit sample packs that combine top‑rated health products tailored to individual goals (e.g., immunity, fitness). Use predictive modeling to personalize pack composition and offer a seamless add‑on at checkout with a refundable deposit.\n- **Expected Business Impact**: Expected 25% increase in first‑time health product purchases, 8% rise in overall AOV, and a 6% boost in retention for the Health & Wellness segment over six months.",
-  "total_reviews_analyzed": 1282,
+  "pulse_note_text": "**1. Top Repeat-Purchasing Drivers**\nReorder convenience (count=7, rating=5.0) and trust in known brands (count=28, rating=4.0) are primary drivers. Habit and routine lock-in (count=3, rating=4.5) also contribute significantly.\n\n**2. Top Exploration Barriers**\nPoor category visibility (count=2, rating=4.0) and a cluttered home screen (count=1, rating=0.0) hinder discovery. A lack of incentive to explore (count=1, rating=0.0) further limits new product engagement.\n\n**3. Top Current Discovery Methods**\nSearch-driven discovery (count=5, rating=5.0) is the most effective method. Word of mouth (count=1, rating=5.0) also yields high satisfaction, while algorithmic recommendations (count=1, rating=4.0) are less impactful.\n\n**4. Top Habit-Driven Behaviors**\nWeekly routine anchoring (count=40, rating=4.1) is the most prevalent habit. Cognitive load avoidance (count=25, rating=3.8) and autopilot reordering (count=9, rating=4.86) also drive consistent usage.\n\n**5. Top Information Gaps**\nUsers critically lack product reviews & ratings (count=47, rating=2.9) and robust product quality assurance (count=28, rating=2.5). Detailed product descriptions (count=32, rating=3.2) are also insufficient.\n\n**6. Top User Frustrations (with Root Causes)**\n- **Poor Product Quality (count=38, rating=1.9):** Root cause is local hub handlers not separating fresh fruits from heavy items, causing bruising.\n- **Delivery Issues (count=35, rating=2.1):** Root cause is inaccurate delivery time estimates failing to account for local traffic patterns.\n- **App Usability Problems (count=2, rating=0.0):** Root cause is the app's content prioritization system failing to balance reorder convenience with new product and category discoverability.\n\n**7. Top Underserved User Segments**\nHealth & Wellness Seekers (100% negative, severity 5.0) are severely underserved. Occasion-Based Shoppers (50% negative, severity 1.05) also experience significant unmet needs. Impulse Browsers (30% negative, severity 0.45) are moderately underserved.\n\n**8. Top Unmet Needs**\nUsers seek personalized category recommendations (count=3, rating=4.0), try-before-you-commit packs (count=1, rating=0.0), and loyalty rewards for exploration (count=1, rating=0.0). All show high opportunity scores (6.0).\n\n**9. Top Product Opportunities**\nOpportunity 1:\n- **Problem**: Users struggle to discover relevant categories because the home screen is cluttered and category visibility is poor, leading to low exploration rates.\n- **Evidence**: Analysis identified 'Poor Category Visibility' and 'Cluttered Home Screen' as top exploration barriers, and users expressed frustration with app usability. Health & Wellness seekers are an underserved segment craving personalized discovery.\n- **Suggested AI Solution**: Deploy an AI-powered personalized category recommendation carousel on the home screen that surfaces top‑relevant categories per user behavior and preferences, dynamically reordering tiles to reduce clutter and highlight high‑interest sections.\n- **Expected Business Impact**: Increase category exploration by ~20%, boost session length, and improve retention among health‑focused users.\n\nOpportunity 2:\n- **Problem**: Health & Wellness seekers lack low‑risk ways to try new products, causing hesitation and abandoned carts.\n- **Evidence**: The unmet need for 'Try‑Before‑You‑Commit Packs' surfaced alongside the frustration of 'Poor Product Quality' and the underserved segment of 'Health & Wellness Seekers'.\n- **Suggested AI Solution**: Introduce AI‑curated trial packs that combine complementary health products based on user health goals and purchase history, with a seamless one‑click add‑to‑cart flow and optional subscription for future refills.\n- **Expected Business Impact**: Boost conversion and repeat purchase rates among health‑focused users, targeting a 15% lift in category revenue.\n\nOpportunity 3:\n- **Problem**: There is no incentive for users to explore beyond their usual purchases, resulting in low cross‑category engagement.\n- **Evidence**: ‘No Incentive to Explore’ was a top barrier, and users voiced desire for ‘Loyalty Rewards for Exploration’. Occasion‑Based Shoppers are an underserved segment that could be motivated by rewards.\n- **Suggested AI Solution**: Launch an exploration‑focused loyalty program where AI awards points for browsing new categories, adding diverse items to the cart, or completing first‑time purchases, redeemable for discounts or exclusive packs.\n- **Expected Business Impact**: Increase cross‑category basket size by ~10% and improve overall user engagement metrics, especially among occasion‑based shoppers.",
+  "total_reviews_analyzed": 1058,
   "product_discovery_relevant_reviews": 12,
   "sentiment_distribution": {
     "positive_count": 8,
@@ -169,7 +169,7 @@
           "Post by u/quick_commerce_user: Zepto homepage is too cluttered with reorders. Every time I open the Zepto app, all I see is the 'Buy Again' section and my past orders. It makes it really hard to discover new categories or explore products outside of my daily groceries.",
           "Post by u/healthy_shopper: Why is it so hard to find healthy/organic categories? I usually order organic milk and vegetables, but finding them requires active search. There is no category recommendations or banners for healthy alternatives on the main category page."
         ],
-        "root_cause": "The app's homepage design and recommendation engine prioritize reorders, hindering new product and category discovery.",
+        "root_cause": "The app's content prioritization system fails to balance reorder convenience with new product and category discoverability.",
         "is_fallback": false
       },
       {
@@ -205,10 +205,61 @@
             "pain_point": "Poor Category Visibility",
             "count": 1,
             "frequency_within_segment": 1.0
+          },
+          {
+            "pain_point": "Lack of Product Information",
+            "count": 4,
+            "frequency_within_segment": 0.27
           }
         ],
         "severity_rank": 1,
         "is_fallback": false
+      },
+      {
+        "segment": "Occasion-Based Shoppers",
+        "count": 30,
+        "pct_sample": 0.18,
+        "average_rating": 2.9,
+        "pct_negative_reviews": 0.5,
+        "severity_score": 1.05,
+        "severity_rank": 2,
+        "evidence": [],
+        "is_fallback": false,
+        "discovery_challenges": [
+          {
+            "pain_point": "Cluttered Home Screen",
+            "count": 8,
+            "frequency_within_segment": 0.27
+          },
+          {
+            "pain_point": "Poor Category Visibility",
+            "count": 5,
+            "frequency_within_segment": 0.17
+          }
+        ]
+      },
+      {
+        "segment": "Impulse Browsers",
+        "count": 10,
+        "pct_sample": 0.06,
+        "average_rating": 3.5,
+        "pct_negative_reviews": 0.3,
+        "severity_score": 0.45,
+        "severity_rank": 3,
+        "evidence": [],
+        "is_fallback": false,
+        "discovery_challenges": [
+          {
+            "pain_point": "No Incentive to Explore",
+            "count": 2,
+            "frequency_within_segment": 0.2
+          },
+          {
+            "pain_point": "Cluttered Home Screen",
+            "count": 1,
+            "frequency_within_segment": 0.1
+          }
+        ]
       },
       {
         "segment": "Routine Replenishers",
@@ -238,7 +289,7 @@
             "frequency_within_segment": 0.1111
           }
         ],
-        "severity_rank": 2,
+        "severity_rank": 4,
         "is_fallback": false
       },
       {
@@ -269,7 +320,7 @@
             "frequency_within_segment": 0.14
           }
         ],
-        "severity_rank": 3,
+        "severity_rank": 5,
         "is_fallback": false
       }
     ],
@@ -308,22 +359,22 @@
     ],
     "opportunities": [
       {
-        "problem": "Users struggle to discover relevant categories because the home screen shows a static, crowded list, leading to poor category visibility.",
-        "evidence": "Analysis shows 30% of surveyed users cite difficulty finding categories; heatmaps reveal low interaction with lower‑position categories; Health & Wellness seekers report 25% lower engagement due to hidden categories.",
-        "suggested_ai_solution": "Deploy an AI‑driven personalized category carousel that dynamically reorders and highlights categories based on user intent, purchase history, and contextual signals. Integrate a lightweight “Smart Filter” that surfaces micro‑categories in real time.",
-        "expected_impact": "Projected 12‑15% lift in category exploration rate, 5% increase in weekly active users, and a 3% boost in conversion for newly surfaced categories."
+        "problem": "Users struggle to discover relevant categories because the home screen is cluttered and category visibility is poor, leading to low exploration rates.",
+        "evidence": "Analysis identified 'Poor Category Visibility' and 'Cluttered Home Screen' as top exploration barriers, and users expressed frustration with app usability. Health & Wellness seekers are an underserved segment craving personalized discovery.",
+        "suggested_ai_solution": "Deploy an AI-powered personalized category recommendation carousel on the home screen that surfaces top‑relevant categories per user behavior and preferences, dynamically reordering tiles to reduce clutter and highlight high‑interest sections.",
+        "expected_impact": "Increase category exploration by ~20%, boost session length, and improve retention among health‑focused users."
       },
       {
-        "problem": "The home screen feels cluttered and offers no incentive for users to explore beyond their habitual purchases, causing exploration fatigue.",
-        "evidence": "User interviews mention ‘no reason to try something new’; 22% of churned users cite “nothing new to discover”; loyalty data shows a 40% gap in reward points earned from exploratory purchases.",
-        "suggested_ai_solution": "Introduce an AI‑powered “Explore Mode” that gamifies discovery: personalized challenge packs, dynamic quests, and loyalty points awarded for trying AI‑recommended new categories or products. Tie rewards to a tiered loyalty program that accelerates benefits for repeated exploration.",
-        "expected_impact": "Anticipated 18% rise in exploratory orders, 7% uplift in repeat purchase frequency, and a 10% reduction in churn among routine replenishers."
+        "problem": "Health & Wellness seekers lack low‑risk ways to try new products, causing hesitation and abandoned carts.",
+        "evidence": "The unmet need for 'Try‑Before‑You‑Commit Packs' surfaced alongside the frustration of 'Poor Product Quality' and the underserved segment of 'Health & Wellness Seekers'.",
+        "suggested_ai_solution": "Introduce AI‑curated trial packs that combine complementary health products based on user health goals and purchase history, with a seamless one‑click add‑to‑cart flow and optional subscription for future refills.",
+        "expected_impact": "Boost conversion and repeat purchase rates among health‑focused users, targeting a 15% lift in category revenue."
       },
       {
-        "problem": "Health & Wellness seekers lack low‑risk ways to test new products, leading to missed adoption and lower average order value.",
-        "evidence": "Underserved segment analysis shows Health & Wellness users have 15% lower AOV and 20% higher abandonment on new product pages; 40% expressed interest in “try‑before‑you‑commit” packs.",
-        "suggested_ai_solution": "Launch AI‑curated Try‑Before‑You‑Commit sample packs that combine top‑rated health products tailored to individual goals (e.g., immunity, fitness). Use predictive modeling to personalize pack composition and offer a seamless add‑on at checkout with a refundable deposit.",
-        "expected_impact": "Expected 25% increase in first‑time health product purchases, 8% rise in overall AOV, and a 6% boost in retention for the Health & Wellness segment over six months."
+        "problem": "There is no incentive for users to explore beyond their usual purchases, resulting in low cross‑category engagement.",
+        "evidence": "‘No Incentive to Explore’ was a top barrier, and users voiced desire for ‘Loyalty Rewards for Exploration’. Occasion‑Based Shoppers are an underserved segment that could be motivated by rewards.",
+        "suggested_ai_solution": "Launch an exploration‑focused loyalty program where AI awards points for browsing new categories, adding diverse items to the cart, or completing first‑time purchases, redeemable for discounts or exclusive packs.",
+        "expected_impact": "Increase cross‑category basket size by ~10% and improve overall user engagement metrics, especially among occasion‑based shoppers."
       }
     ]
   }

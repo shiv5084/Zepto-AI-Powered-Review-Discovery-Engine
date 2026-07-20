@@ -20,9 +20,9 @@ export default function SegmentsSection({ segments }: SegmentsSectionProps) {
 
   const hasData = segments && segments.length > 0;
 
-  // Pre-formatted data for Recharts Radar
+  // Pre-formatted data for Recharts Radar (using full segment name as subject)
   const radarData = segments.map(item => ({
-    subject: item.segment.split(' ')[0], // abbreviate
+    subject: item.segment,
     severity: item.severity_score,
     rating: item.average_rating,
     fullMark: 5.0
@@ -46,11 +46,19 @@ export default function SegmentsSection({ segments }: SegmentsSectionProps) {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', alignItems: 'center' }}>
           
           {/* Radar Chart */}
-          <div style={{ width: '300px', height: '260px', background: 'rgba(255,255,255,0.01)', padding: '0.5rem', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.03)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ width: '420px', height: '280px', background: 'rgba(255,255,255,0.01)', padding: '0.5rem', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.03)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             {mounted ? (
-              <RadarChart cx="50%" cy="50%" outerRadius="75%" data={radarData} width={300} height={260}>
+              <RadarChart 
+                cx="50%" 
+                cy="50%" 
+                outerRadius="60%" 
+                data={radarData} 
+                width={420} 
+                height={280}
+                margin={{ top: 15, right: 90, bottom: 15, left: 90 }}
+              >
                 <PolarGrid stroke="rgba(255,255,255,0.08)" />
-                <PolarAngleAxis dataKey="subject" stroke="#9CA3AF" fontSize={11} />
+                <PolarAngleAxis dataKey="subject" stroke="#9CA3AF" fontSize={10} />
                 <PolarRadiusAxis angle={30} domain={[0, 5]} stroke="rgba(255,255,255,0.3)" fontSize={10} />
                 <Radar name="Severity" dataKey="severity" stroke="#7C3AED" fill="#7C3AED" fillOpacity={0.4} />
               </RadarChart>
@@ -61,7 +69,7 @@ export default function SegmentsSection({ segments }: SegmentsSectionProps) {
 
           {/* Segment Details cards */}
           <div style={{ flex: 1, minWidth: '320px', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            {segments.slice(0, 3).map((item, index) => (
+            {segments.map((item, index) => (
               <div 
                 key={index} 
                 className={styles.card}
