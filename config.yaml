@@ -34,7 +34,7 @@ ingestion:
 optimization:
   enabled: true                    # false = original process_reviews() used (no optimization)
   sampling:                        # Strategy 4: Stratified Sampling
-    sample_size: 1000              # max reviews sent through LLM; rest are skipped
+    sample_size: 500              # max reviews sent through LLM; rest are skipped #1000
     min_floor_sources:             # always take ALL available reviews from these sources
       - "reddit"
       - "product_reviews"
