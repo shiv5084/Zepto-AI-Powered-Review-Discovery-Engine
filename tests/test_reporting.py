@@ -82,14 +82,16 @@ class TestReporting(unittest.TestCase):
 
         metrics = data["metrics"]
 
-        # All 8 metric sections must have exactly 3 items (1 live + 2 fallback)
-        section_keys = [
+        # Most metric sections must have exactly 3 items (1 live + 2 fallback),
+        # but underserved_segments must have exactly 5 items (representing all 5 shopper personas).
+        section_keys_3 = [
             "repeat_purchase_drivers", "exploration_barriers", "discovery_methods",
             "habit_drivers", "information_needs", "top_frustrations", 
-            "underserved_segments", "unmet_needs"
+            "unmet_needs"
         ]
-        for section_key in section_keys:
+        for section_key in section_keys_3:
             self.assertEqual(len(metrics[section_key]), 3, f"{section_key} should have 3 items")
+        self.assertEqual(len(metrics["underserved_segments"]), 5, "underserved_segments should have 5 items")
 
         # First item in each section is the live data
         self.assertFalse(metrics["repeat_purchase_drivers"][0].get("is_fallback"))

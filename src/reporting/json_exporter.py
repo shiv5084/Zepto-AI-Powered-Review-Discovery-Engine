@@ -184,6 +184,11 @@ def pad_analysis_results(analysis_results: dict) -> dict:
     padded["question_8"] = _fill_to_n(raw_q8, _FALLBACK_Q8, n=3, key="theme")
     
     padded_q7 = _fill_to_n(raw_q7, _FALLBACK_Q7, n=5, key="segment")
+    # Normalize pct_sample across the final 5 segments so the sum is exactly 100%
+    total_q7_count = sum(item.get("count", 0) for item in padded_q7)
+    for item in padded_q7:
+        item["pct_sample"] = round(item.get("count", 0) / total_q7_count, 4) if total_q7_count > 0 else 0.0
+
     padded_q7.sort(key=lambda x: x.get("severity_score", 0.0), reverse=True)
     for rank, item in enumerate(padded_q7):
         item["severity_rank"] = rank + 1

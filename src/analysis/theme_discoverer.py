@@ -212,6 +212,8 @@ class ThemeDiscoverer:
             if seg in buckets:
                 buckets[seg].append(r)
 
+        total_active_segments_count = sum(len(buckets[p]) for p in Q7_PERSONAS if p != "None")
+
         segments_list = []
         for seg_name, seg_reviews in buckets.items():
             if seg_name == "None":
@@ -220,7 +222,7 @@ class ThemeDiscoverer:
             if count == 0:
                 continue
 
-            pct_sample = round(count / total_len, 4) if total_len > 0 else 0.0
+            pct_sample = round(count / total_active_segments_count, 4) if total_active_segments_count > 0 else 0.0
             ratings = [r.get("rating") for r in seg_reviews if r.get("rating") is not None and not pd.isna(r.get("rating"))]
             avg_rating = round(sum(ratings) / len(ratings), 2) if ratings else 0.0
             evidence = [r.get("text", "") for r in seg_reviews[:2] if r.get("text")]
