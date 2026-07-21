@@ -201,7 +201,7 @@ class ThemeDiscoverer:
         Metrics:
           - pct_sample: count in segment / total classified reviews
           - pct_negative_reviews: percentage of reviews in segment with any Q2 pain point
-          - severity_score: (5 - average_rating) * pct_negative_reviews
+          - priority_score: (5 - average_rating) * pct_negative_reviews
         """
         logger.info("Q7: Aggregating underserved user segments locally...")
         total_len = len(reviews)
@@ -232,8 +232,8 @@ class ThemeDiscoverer:
             reviews_with_barriers = sum(1 for r in seg_reviews if r.get("exploration_barriers", "None") != "None")
             pct_negative_reviews = round(reviews_with_barriers / count, 4) if count > 0 else 0.0
             
-            # Severity score = (5.0 - avg_rating) * pct_negative_reviews
-            severity_score = round((5.0 - avg_rating) * pct_negative_reviews, 2)
+            # Priority score = 1.5 * pct_sample + 2.0 * pct_negative_reviews + 0.40 * (5.0 - avg_rating)
+            priority_score = round(1.5 * pct_sample + 2.0 * pct_negative_reviews + 0.40 * (5.0 - avg_rating), 2)
 
             # Cross-aggregate discovery_pain_points (Q2 barriers) within this segment
             pain_point_counts: Counter = Counter()
@@ -257,13 +257,13 @@ class ThemeDiscoverer:
                 "average_rating": avg_rating,
                 "evidence": evidence,
                 "pct_negative_reviews": pct_negative_reviews,
-                "severity_score": severity_score,
+                "priority_score": priority_score,
                 "discovery_challenges": discovery_challenges,
             })
 
-        segments_list.sort(key=lambda x: x["severity_score"], reverse=True)
+        segments_list.sort(key=lambda x: x["priority_score"], reverse=True)
         for rank, item in enumerate(segments_list):
-            item["severity_rank"] = rank + 1
+            item["priority_rank"] = rank + 1
 
         return segments_list
 

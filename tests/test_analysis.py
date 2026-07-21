@@ -94,6 +94,9 @@ class TestThemeDiscovery(unittest.TestCase):
         # Of the 2 reviews in Routine Replenishers, Review 2 has a cross-category pain point (Poor Category Visibility from Q2)
         # Review 1 has "None". So % Negative Reviews for Q2 pain points = 1 / 2 = 0.50
         self.assertEqual(routine_seg["pct_negative_reviews"], 0.50)
+        # priority_score = 1.5 * (2/3) + 2.0 * 0.50 + 0.40 * (5 - 3) = 1.0 + 1.0 + 0.8 = 2.80
+        self.assertAlmostEqual(routine_seg["priority_score"], 2.80, places=2)
+        self.assertEqual(routine_seg["priority_rank"], 2)
 
     def test_q8_opportunity_score(self):
         """Q8 computes opportunity_score correctly based on Count * (6 - Avg Rating)."""

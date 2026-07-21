@@ -163,7 +163,7 @@ class PulseGenerator:
         lines.append("## Question 6: Platform Frustrations\n" + "\n".join(q6_items))
         
         # 7. Segments
-        q7_items = [f"- {t['segment']}: count={t['count']}, rating={t['average_rating']}, severity={t.get('severity_score')}, % sample={t.get('pct_sample')}, % negative={t.get('pct_negative_reviews')}" for t in analysis_results.get("question_7", [])[:3]]
+        q7_items = [f"- {t['segment']}: count={t['count']}, rating={t['average_rating']}, priority={t.get('priority_score')}, % sample={t.get('pct_sample')}, % negative={t.get('pct_negative_reviews')}" for t in analysis_results.get("question_7", [])[:3]]
         lines.append("## Question 7: Underserved User Segments\n" + "\n".join(q7_items))
         
         # 8. Unmet Needs

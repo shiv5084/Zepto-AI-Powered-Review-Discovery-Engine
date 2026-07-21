@@ -98,13 +98,13 @@ def main():
         print("  " + "-" * 30)
 
     # Q7 segments print
-    print("\nQUESTION 7: Underserved User Segments (Top Severities)")
+    print("\nQUESTION 7: Underserved User Segments (Top Priorities)")
     for item in results["question_7"][:2]:
         print(f"  Segment     : {item['segment']}")
         print(f"  Count       : {item['count']}")
         print(f"  % Sample    : {round(item.get('pct_sample', 0) * 100, 1)}%")
         print(f"  % Negative  : {round(item.get('pct_negative_reviews', 0) * 100, 1)}%")
-        print(f"  Severity Rank: {item['severity_rank']} (Score: {item['severity_score']})")
+        print(f"  Priority Rank: {item.get('priority_rank')} (Score: {item.get('priority_score')})")
         print(f"  Challenges  : {item['discovery_challenges'][:2]}")
         print("  " + "-" * 30)
 

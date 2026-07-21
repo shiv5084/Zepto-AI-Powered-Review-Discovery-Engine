@@ -19,8 +19,8 @@ export interface UnderservedSegment {
   pct_sample: number;
   average_rating: number;
   pct_negative_reviews: number;
-  severity_score: number;
-  severity_rank: number;
+  priority_score: number;
+  priority_rank: number;
   discovery_challenges: DiscoveryChallenge[];
 }
 

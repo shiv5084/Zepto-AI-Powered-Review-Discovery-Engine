@@ -70,7 +70,7 @@ _FALLBACK_Q6 = [
 _FALLBACK_Q7 = [
     {
         "segment": "Health & Wellness Seekers", "count": 50, "pct_sample": 0.3333, "average_rating": 2.2,
-        "pct_negative_reviews": 0.75, "severity_score": 2.10, "severity_rank": 1, "evidence": [], "is_fallback": True,
+        "pct_negative_reviews": 0.75, "priority_score": 3.12, "priority_rank": 1, "evidence": [], "is_fallback": True,
         "discovery_challenges": [
             {"pain_point": "Lack of Product Information", "count": 25, "frequency_within_segment": 0.50},
             {"pain_point": "Poor Category Visibility", "count": 13, "frequency_within_segment": 0.26},
@@ -78,7 +78,7 @@ _FALLBACK_Q7 = [
     },
     {
         "segment": "Deal-Driven Explorers", "count": 40, "pct_sample": 0.2667, "average_rating": 2.6,
-        "pct_negative_reviews": 0.75, "severity_score": 1.80, "severity_rank": 2, "evidence": [], "is_fallback": True,
+        "pct_negative_reviews": 0.75, "priority_score": 2.86, "priority_rank": 2, "evidence": [], "is_fallback": True,
         "discovery_challenges": [
             {"pain_point": "No Incentive to Explore", "count": 17, "frequency_within_segment": 0.425},
             {"pain_point": "Poor Category Visibility", "count": 9, "frequency_within_segment": 0.225},
@@ -87,7 +87,7 @@ _FALLBACK_Q7 = [
     },
     {
         "segment": "Occasion-Based Shoppers", "count": 20, "pct_sample": 0.1333, "average_rating": 2.9,
-        "pct_negative_reviews": 0.50, "severity_score": 1.05, "severity_rank": 3, "evidence": [], "is_fallback": True,
+        "pct_negative_reviews": 0.50, "priority_score": 2.04, "priority_rank": 3, "evidence": [], "is_fallback": True,
         "discovery_challenges": [
             {"pain_point": "Cluttered Home Screen", "count": 6, "frequency_within_segment": 0.30},
             {"pain_point": "Poor Category Visibility", "count": 4, "frequency_within_segment": 0.20},
@@ -95,7 +95,7 @@ _FALLBACK_Q7 = [
     },
     {
         "segment": "Impulse Browsers", "count": 10, "pct_sample": 0.0667, "average_rating": 3.5,
-        "pct_negative_reviews": 0.30, "severity_score": 0.45, "severity_rank": 4, "evidence": [], "is_fallback": True,
+        "pct_negative_reviews": 0.30, "priority_score": 1.30, "priority_rank": 4, "evidence": [], "is_fallback": True,
         "discovery_challenges": [
             {"pain_point": "No Incentive to Explore", "count": 2, "frequency_within_segment": 0.20},
             {"pain_point": "Cluttered Home Screen", "count": 1, "frequency_within_segment": 0.10},
@@ -103,7 +103,7 @@ _FALLBACK_Q7 = [
     },
     {
         "segment": "Routine Replenishers", "count": 30, "pct_sample": 0.2000, "average_rating": 3.8,
-        "pct_negative_reviews": 0.20, "severity_score": 0.24, "severity_rank": 5, "evidence": [], "is_fallback": True,
+        "pct_negative_reviews": 0.20, "priority_score": 1.18, "priority_rank": 5, "evidence": [], "is_fallback": True,
         "discovery_challenges": [
             {"pain_point": "Poor Category Visibility", "count": 4, "frequency_within_segment": 0.1333},
             {"pain_point": "Trust Deficit in New Brands", "count": 2, "frequency_within_segment": 0.0667},
@@ -161,9 +161,9 @@ def pad_analysis_results(analysis_results: dict) -> dict:
     for item in padded_q7:
         item["pct_sample"] = round(item.get("count", 0) / total_q7_count, 4) if total_q7_count > 0 else 0.0
 
-    padded_q7.sort(key=lambda x: x.get("severity_score", 0.0), reverse=True)
+    padded_q7.sort(key=lambda x: x.get("priority_score", 0.0), reverse=True)
     for rank, item in enumerate(padded_q7):
-        item["severity_rank"] = rank + 1
+        item["priority_rank"] = rank + 1
     padded["question_7"] = padded_q7
 
     # Ensure sentiment distribution has at least 150 reviews as total reviews baseline

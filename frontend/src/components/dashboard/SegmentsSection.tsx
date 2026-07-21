@@ -23,7 +23,7 @@ export default function SegmentsSection({ segments }: SegmentsSectionProps) {
   // Pre-formatted data for Recharts Radar (using full segment name as subject)
   const radarData = segments.map(item => ({
     subject: item.segment,
-    severity: item.severity_score,
+    priority: item.priority_score,
     rating: item.average_rating,
     fullMark: 5.0
   }));
@@ -37,7 +37,7 @@ export default function SegmentsSection({ segments }: SegmentsSectionProps) {
             7. Underserved User Segments
           </h2>
           <p className={styles.sectionSubtitle}>
-            Prioritized shopper personas mapped against discovery severity score metrics.
+            Shopper Personas Ranked by Priority Score.
           </p>
         </div>
       </div>
@@ -60,7 +60,7 @@ export default function SegmentsSection({ segments }: SegmentsSectionProps) {
                 <PolarGrid stroke="rgba(255,255,255,0.08)" />
                 <PolarAngleAxis dataKey="subject" stroke="#9CA3AF" fontSize={10} />
                 <PolarRadiusAxis angle={30} domain={[0, 5]} stroke="rgba(255,255,255,0.3)" fontSize={10} />
-                <Radar name="Severity" dataKey="severity" stroke="#7C3AED" fill="#7C3AED" fillOpacity={0.4} />
+                <Radar name="Priority" dataKey="priority" stroke="#7C3AED" fill="#7C3AED" fillOpacity={0.4} />
               </RadarChart>
             ) : (
               <div style={{ color: 'var(--text-muted)' }}>Loading Segment Radar...</div>
@@ -74,18 +74,18 @@ export default function SegmentsSection({ segments }: SegmentsSectionProps) {
                 key={index} 
                 className={styles.card}
                 style={{ 
-                  borderColor: item.severity_rank === 1 ? 'rgba(124, 58, 237, 0.4)' : 'rgba(255,255,255,0.05)',
-                  background: item.severity_rank === 1 ? 'rgba(124, 58, 237, 0.02)' : 'rgba(255,255,255,0.03)'
+                  borderColor: item.priority_rank === 1 ? 'rgba(124, 58, 237, 0.4)' : 'rgba(255,255,255,0.05)',
+                  background: item.priority_rank === 1 ? 'rgba(124, 58, 237, 0.02)' : 'rgba(255,255,255,0.03)'
                 }}
               >
                 <div className={styles.cardHeader}>
                   <div>
-                    <span style={{ fontSize: '0.7rem', color: '#7C3AED', fontWeight: 700, textTransform: 'uppercase' }}>Rank #{item.severity_rank}</span>
+                    <span style={{ fontSize: '0.7rem', color: '#7C3AED', fontWeight: 700, textTransform: 'uppercase' }}>Rank #{item.priority_rank}</span>
                     <h3 className={styles.cardTitle} style={{ fontSize: '1.1rem', marginTop: '0.1rem' }}>{item.segment}</h3>
                   </div>
                   <div style={{ textAlign: 'right' }}>
-                    <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#EF476F' }}>{item.severity_score.toFixed(2)}</div>
-                    <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Severity Score</div>
+                    <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#EF476F' }}>{item.priority_score.toFixed(2)}</div>
+                    <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Priority Score</div>
                   </div>
                 </div>
 

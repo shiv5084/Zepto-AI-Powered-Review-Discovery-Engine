@@ -15,7 +15,7 @@ class TestReporting(unittest.TestCase):
             "question_4": [{"theme": "Autopilot Reordering", "count": 7, "average_rating": 3.0, "evidence": ["I just tap reorder."]}],
             "question_5": [{"theme": "Product Information Gaps", "count": 5, "average_rating": 4.0, "evidence": ["Needs ingredients details."]}],
             "question_6": [{"theme": "Catalog Stock Disconnects", "count": 12, "average_rating": 1.5, "root_cause": "Inventory sync delays", "evidence": ["Showed in stock but refunded."]}],
-            "question_7": [{"segment": "Deal-Driven Explorers", "count": 9, "average_rating": 2.3, "severity_score": 1.21, "severity_rank": 1, "pct_sample": 0.35, "pct_negative_reviews": 0.65, "discovery_challenges": [{"pain_point": "Poor Category Visibility", "count": 5}]}],
+            "question_7": [{"segment": "Deal-Driven Explorers", "count": 9, "average_rating": 2.3, "priority_score": 1.21, "priority_rank": 1, "pct_sample": 0.35, "pct_negative_reviews": 0.65, "discovery_challenges": [{"pain_point": "Poor Category Visibility", "count": 5}]}],
             "question_8": [{"theme": "Try-Before-You-Commit Packs", "count": 5, "average_rating": 2.0, "opportunity_score": 20.0, "evidence": ["Wish I could buy small trials."]}],
             "sentiment_distribution": {
                 "positive_count": 15,
