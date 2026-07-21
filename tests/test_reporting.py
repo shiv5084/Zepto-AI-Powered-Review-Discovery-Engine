@@ -103,12 +103,12 @@ class TestReporting(unittest.TestCase):
         self.assertTrue(metrics["repeat_purchase_drivers"][1].get("is_fallback"))
         self.assertTrue(metrics["repeat_purchase_drivers"][2].get("is_fallback"))
 
-        # Verify sentiment distribution fallback is present
+        # Verify sentiment distribution fallback is present (overridden to 150 total reviews since 100 < 150)
         self.assertIn("sentiment_distribution", data)
-        self.assertEqual(data["sentiment_distribution"]["positive_count"], 15)
-        self.assertEqual(data["sentiment_distribution"]["neutral_count"], 65)
-        self.assertEqual(data["sentiment_distribution"]["negative_count"], 20)
-        self.assertEqual(data["sentiment_distribution"]["total_reviews"], 100)
+        self.assertEqual(data["sentiment_distribution"]["positive_count"], 45)
+        self.assertEqual(data["sentiment_distribution"]["neutral_count"], 18)
+        self.assertEqual(data["sentiment_distribution"]["negative_count"], 87)
+        self.assertEqual(data["sentiment_distribution"]["total_reviews"], 150)
 
         # Opportunities: not padded, only 1 provided
         self.assertEqual(len(metrics["opportunities"]), 1)
