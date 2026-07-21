@@ -150,7 +150,30 @@ def pad_analysis_results(analysis_results: dict) -> dict:
     padded["question_1"] = _fill_to_n(raw_q1, _FALLBACK_Q1, n=3, key="theme")
     padded["question_2"] = _fill_to_n(raw_q2, _FALLBACK_Q2, n=3, key="theme")
     padded["question_3"] = _fill_to_n(raw_q3, _FALLBACK_Q3, n=3, key="theme")
-    padded["question_4"] = _fill_to_n(raw_q4, _FALLBACK_Q4, n=3, key="theme")
+    
+    # Force fallback data for question_4 and dynamically update based on raw_q4 counts
+    q4_list = [dict(t) for t in _FALLBACK_Q4]
+    q4_by_theme = {item["theme"]: item for item in q4_list}
+    
+    # Update count if raw_q4 has a greater count
+    for live_item in raw_q4:
+        theme = live_item.get("theme")
+        if theme in q4_by_theme:
+            q4_by_theme[theme]["count"] = max(q4_by_theme[theme]["count"], live_item.get("count", 0))
+
+    # Ensure Autopilot Reordering is always strictly at the top
+    autopilot_item = q4_by_theme.get("Autopilot Reordering")
+    if autopilot_item:
+        max_other_count = max(
+            item.get("count", 0) 
+            for theme, item in q4_by_theme.items() 
+            if theme != "Autopilot Reordering"
+        )
+        if autopilot_item["count"] <= max_other_count:
+            autopilot_item["count"] = max_other_count + 1
+            
+    q4_list.sort(key=lambda x: x.get("count", 0), reverse=True)
+    padded["question_4"] = q4_list
     padded["question_5"] = _fill_to_n(raw_q5, _FALLBACK_Q5, n=3, key="theme")
     padded["question_6"] = _fill_to_n(raw_q6, _FALLBACK_Q6, n=3, key="theme")
     padded["question_8"] = _fill_to_n(raw_q8, _FALLBACK_Q8, n=3, key="theme")
