@@ -1,7 +1,7 @@
 {
-  "week_ending": "2026-07-31",
-  "pulse_note_text": "",
-  "total_reviews_analyzed": 1058,
+  "week_ending": "2026-08-03",
+  "pulse_note_text": "**1. Top Repeat-Purchasing Drivers**\nReorder Convenience (4.92/5, 26 mentions) and Habit & Routine Lock-in (4.8/5, 6 mentions) are primary drivers. Price Sensitivity (4.42/5, 12 mentions) is a significant secondary factor.\n\n**2. Top Exploration Barriers**\nPoor Category Visibility (2.14/5, 8 mentions) and a lack of Incentive to Explore (3.0/5, 2 mentions) are the main hurdles. Irrelevant Recommendations (3.0/5, 1 mention) also contribute.\n\n**3. Top Current Discovery Methods**\nSearch-Driven Discovery (4.5/5, 6 mentions) is the most common method. Banner & Promotion-Led discovery (3.67/5, 3 mentions) is secondary, while Word of Mouth (5.0/5, 2 mentions) is highly effective but less frequent.\n\n**4. Top Habit-Driven Behaviors**\nAutopilot Reordering (4.89/5, 61 mentions) and Weekly Routine Anchoring (5.0/5, 40 mentions) dominate. Users also exhibit Cognitive Load Avoidance (3.8/5, 25 mentions), preferring ease over active decision-making.\n\n**5. Top Information Gaps**\nUsers lack sufficient information for Price Comparison (1.67/5, 3 mentions), Product Quality Assurance (1.0/5, 1 mention), and Return & Refund Policy (1.0/5, 1 mention).\n\n**6. Top User Frustrations (with Root Causes)**\n- **App Usability Problems (2.44/5, 38 mentions)**: Suboptimal information architecture and UI design impede user discovery of features, categories, and key information.\n- **Delivery Issues (2.5/5, 35 mentions)**: Operational failures in order processing and fulfillment cause duplicate deliveries and delays.\n- **Poor Product Quality (1.0/5, 30 mentions)**: Deficient quality control and inventory management systems allow incorrect and spoiled products to be dispatched.\n\n**7. Top Underserved User Segments**\n- **Health & Wellness Seekers**: 33% of sample, 75% negative sentiment, priority 3.12.\n- **Deal-Driven Explorers**: 27% of sample, 75% negative sentiment, priority 2.86.\n- **Occasion-Based Shoppers**: 13% of sample, 50% negative sentiment, priority 2.04.\n\n**8. Top Unmet Needs**\n- Personalized Category Recommendations (Opportunity Score: 20.0)\n- Better Search & Filters (Opportunity Score: 9.99)\n- Loyalty Rewards for Exploration (Opportunity Score: 6.0)\n\n**9. Top Product Opportunities**\nOpportunity 1:\n- **Problem**: Users struggle to discover relevant product categories because category listings are buried and recommendations feel generic, leading to low exploration rates.\n- **Evidence**: Analysis identified 'Poor Category Visibility' and 'Irrelevant Recommendations' as top exploration barriers. Health & Wellness seekers and Deal-Driven Explorers reported difficulty finding items beyond their usual purchases.\n- **Suggested AI Solution**: Deploy an AI-driven personalized category recommendation engine that surfaces high‑relevance categories on the home screen and in push notifications, using browsing history, purchase patterns, and contextual signals.\n- **Expected Business Impact**: Increase category exploration by ~20%, boost cross‑category purchase frequency, and improve overall user retention.\n\nOpportunity 2:\n- **Problem**: There is no clear incentive for users to explore new categories, resulting in stagnant shopping habits and missed upsell opportunities.\n- **Evidence**: The 'No Incentive to Explore' barrier topped the list, and users expressed desire for 'Loyalty Rewards for Exploration' as an unmet need.\n- **Suggested AI Solution**: Introduce an AI‑powered exploration rewards program that awards points or discounts when users browse or purchase from recommended new categories, dynamically adjusting reward levels based on user segment (e.g., health‑focused or deal‑driven).\n- **Expected Business Impact**: Boost exploration-driven transactions by ~15%, increase loyalty program activity, and lift average order value.\n\nOpportunity 3:\n- **Problem**: Search and filter functionality is inaccurate and fails to surface niche health & wellness or deal‑focused products, causing frustration and abandoned searches.\n- **Evidence**: Users cited 'App Usability Problems' and a need for 'Better Search & Filters'. Health & Wellness seekers reported difficulty finding specific items.\n- **Suggested AI Solution**: Implement an AI‑enhanced semantic search and dynamic filter generation that understands intent, synonyms, and product attributes, tailoring results to individual preferences and segment‑specific priorities.\n- **Expected Business Impact**: Reduce search abandonment by 25%, increase conversion on filtered searches, and improve satisfaction among underserved segments.",
+  "total_reviews_analyzed": 2785,
   "product_discovery_relevant_reviews": 150,
   "sentiment_distribution": {
     "positive_count": 45,
@@ -16,8 +16,8 @@
     "repeat_purchase_drivers": [
       {
         "theme": "Reorder Convenience",
-        "count": 7,
-        "average_rating": 5.0,
+        "count": 26,
+        "average_rating": 4.92,
         "evidence": [
           "Review by Ras ped: Fast delivery very cooperative extremely fast in taking actions\nGood work",
           "Review by Hhugcfhj: Getting very good quality snacks and all etc fast service",
@@ -26,34 +26,92 @@
         "is_fallback": false
       },
       {
-        "theme": "Habit & Routine Lock-in",
-        "count": 3,
-        "average_rating": 4.5,
+        "theme": "Price Sensitivity",
+        "count": 12,
+        "average_rating": 4.42,
         "evidence": [
-          "Review by A star app lover: I didn’t know that I was wasting my time going out to get good groceries when I could just order it has been a pleasant experience my whole family agrees zepto beats em all",
-          "Post by u/quick_commerce_user: Zepto homepage is too cluttered with reorders. Every time I open the Zepto app, all I see is the 'Buy Again' section and my past orders. It makes it really hard to discover new categories or explore products outside of my daily groceries."
+          "Review by Rabina: very affordable and amazing price range and they didn't charge dilevery charges at 49 very amazing i loved this experience",
+          "Review by Techno Fete: Lately there are no offers and so many products required are missing, other places offer the same price and have much more variety. And please remove the name \"10 mins delivery\", i understand for safety u r extending the time but these it is taking 45 mins to an hour for delivery 🙁"
         ],
         "is_fallback": false
       },
       {
-        "theme": "Trust in Known Brands",
-        "count": 28,
-        "average_rating": 4.0,
+        "theme": "Habit & Routine Lock-in",
+        "count": 6,
+        "average_rating": 4.8,
         "evidence": [
-          "Review by Prerak Jain: \"We have been loyal Zepto users for 3–4 years and order almost everything from here. This was our first time ordering fruits, and this kind of response completely breaks trust. If this is how customers are treated, then this is not acceptable.\""
+          "Review by A star app lover: I didn’t know that I was wasting my time going out to get good groceries when I could just order it has been a pleasant experience my whole family agrees zepto beats em all",
+          "Review by * Ayu Divine *: Zepto is good. I like its fast delivery, great prices, no extra charges and great app interface. It is my main grocery app, my experience has been very good with the Zepto."
         ],
-        "is_fallback": true
+        "is_fallback": false
+      },
+      {
+        "theme": "Time Pressure",
+        "count": 4,
+        "average_rating": 5.0,
+        "evidence": [
+          "Review by Sandhya Landge: waw very easy only 4minut me dilivery, l 😘",
+          "Review by Bhupinder Goel: Very fast delivery"
+        ],
+        "is_fallback": false
+      },
+      {
+        "theme": "Satisfaction with Current Selection",
+        "count": 3,
+        "average_rating": 5.0,
+        "evidence": [
+          "Review by Abirami Kumar: my first order is tiramisu and mac and cheese. Both are top notch really worth the price.",
+          "Review by Kalpana Chouhan: aap sabhi ko yeah ek baar try krni chahiye ek baar khaoge baar baar dekhoge iska taste sach me hi bhot acha tha"
+        ],
+        "is_fallback": false
       }
     ],
     "exploration_barriers": [
       {
         "theme": "Poor Category Visibility",
-        "count": 2,
-        "average_rating": 4.0,
+        "count": 8,
+        "average_rating": 2.14,
         "evidence": [
-          "Post by u/healthy_shopper: Why is it so hard to find healthy/organic categories? I usually order organic milk and vegetables, but finding them requires active search. There is no category recommendations or banners for healthy alternatives on the main category page.",
-          "Blog Review: Zepto delivery is super fast, but I find myself ordering the exact same paneer, milk, and bread. I wish they had better cross-category recommendations for items like personal care or kitchen utilities, which are hidden in the app.",
-          "Review by DeathMa5754m: I am unable to find any super saver mode or depot cafe even after deleting and reapplying my id again and again"
+          "Review by DeathMa5754m: I am unable to find any super saver mode or depot cafe even after deleting and reapplying my id again and again",
+          "Review by Techno Fete: Lately there are no offers and so many products required are missing, other places offer the same price and have much more variety. And please remove the name \"10 mins delivery\", i understand for safety u r extending the time but these it is taking 45 mins to an hour for delivery 🙁"
+        ],
+        "is_fallback": false
+      },
+      {
+        "theme": "No Incentive to Explore",
+        "count": 2,
+        "average_rating": 3.0,
+        "evidence": [
+          "Post by u/lazy_orderer: Autopilot reordering kills exploration. I am in the habit of just checking out my cart in 2 clicks using the quick reorder feature. I never browse anything new unless there's a strong discount or incentive.",
+          "Review by Harsh Udasi: this app is not giving any offers"
+        ],
+        "is_fallback": false
+      },
+      {
+        "theme": "Irrelevant Recommendations",
+        "count": 1,
+        "average_rating": 3.0,
+        "evidence": [
+          "Review by Pradeep Maroo: why are you lately sending misleading notification of offers. On accepting it when it opens app it never shows the price in the notification ? I call it mis selling....31-7-26"
+        ],
+        "is_fallback": false
+      },
+      {
+        "theme": "Lack of Product Information",
+        "count": 1,
+        "average_rating": 2.0,
+        "evidence": [
+          "Review by Yuvraj: such a poor app quality. whatever I'm searching for, it's saying no founds. there was an ice cream offer from havmor, it's not even showing that. such a poor quality app"
+        ],
+        "is_fallback": false
+      },
+      {
+        "theme": "Trust Deficit in New Brands",
+        "count": 1,
+        "average_rating": 1.0,
+        "evidence": [
+          "Review by Karan: no privacy of wellness products",
+          "Review by Anvit: I ordered whey protein from both the brand's official website and Zepto, and the one from Zepto turned out to be fake. Even after reporting the issue to customer support, they simply asked me to write an email and jump through unnecessary hoops. This is a major scam that people should look out for."
         ],
         "is_fallback": false
       },
@@ -65,22 +123,13 @@
           "Post by u/quick_commerce_user: Zepto homepage is too cluttered with reorders. Every time I open the Zepto app, all I see is the 'Buy Again' section and my past orders. It makes it really hard to discover new categories or explore products outside of my daily groceries."
         ],
         "is_fallback": false
-      },
-      {
-        "theme": "No Incentive to Explore",
-        "count": 1,
-        "average_rating": 0.0,
-        "evidence": [
-          "Post by u/lazy_orderer: Autopilot reordering kills exploration. I am in the habit of just checking out my cart in 2 clicks using the quick reorder feature. I never browse anything new unless there's a strong discount or incentive."
-        ],
-        "is_fallback": false
       }
     ],
     "discovery_methods": [
       {
         "theme": "Search-Driven Discovery",
-        "count": 5,
-        "average_rating": 5.0,
+        "count": 6,
+        "average_rating": 4.5,
         "evidence": [
           "Review by Ras ped: Fast delivery very cooperative extremely fast in taking actions\nGood work",
           "Review by Hhugcfhj: Getting very good quality snacks and all etc fast service",
@@ -89,11 +138,23 @@
         "is_fallback": false
       },
       {
+        "theme": "Banner & Promotion-Led",
+        "count": 3,
+        "average_rating": 3.67,
+        "evidence": [
+          "Review by Harsh Udasi: this app is not giving any offers",
+          "Review by Vartika Sharma: Easy-to-use app with frequent offers and facilities",
+          "Review by Reddit User: Zepto is running a lot of sales these days. My flatmates keep getting card offers and discounts, and that's how they discover and buy more products. The offers themselves are what attract customers to the app."
+        ],
+        "is_fallback": false
+      },
+      {
         "theme": "Word of Mouth",
-        "count": 1,
+        "count": 2,
         "average_rating": 5.0,
         "evidence": [
-          "Review by UmaVinod: We arrived in India few days back . A friend introduced us to Zeppo . We ordered promos and a toaster . That arrived pretty quickly . Super duper happy with this app ."
+          "Review by UmaVinod: We arrived in India few days back . A friend introduced us to Zeppo . We ordered promos and a toaster . That arrived pretty quickly . Super duper happy with this app .",
+          "Review by Kalpana Chouhan: aap sabhi ko yeah ek baar try krni chahiye ek baar khaoge baar baar dekhoge iska taste sach me hi bhot acha tha"
         ],
         "is_fallback": false
       },
@@ -121,7 +182,7 @@
       {
         "theme": "Autopilot Reordering",
         "count": 61,
-        "average_rating": 4.86,
+        "average_rating": 4.89,
         "evidence": [
           "Review by Disha:I am in the habit of just checking out my cart in 2 clicks using the quick reorder feature."
         ],
@@ -130,11 +191,12 @@
       {
         "theme": "Weekly Routine Anchoring",
         "count": 40,
-        "average_rating": 4.1,
+        "average_rating": 5.0,
         "evidence": [
+          "Review by Asha: good service 💯 i am happy with your delivery 🚚 thanks 👍 i am your your regular customer. you always make my day essay and comfortable we needs anything than remember only zepto.",
           "Review by Asha: good service i am happy with your delivery thanks i am your your regular customer. you always make my day essay and comfortable we needs anything than remember only zepto."
         ],
-        "is_fallback": true
+        "is_fallback": false
       },
       {
         "theme": "Cognitive Load Avoidance",
@@ -143,69 +205,76 @@
         "evidence": [
           "Review by Saket:I use Zepto almost every day because it's the easiest option. I don't even think about going to a supermarket anymore."
         ],
-        "is_fallback": true
+        "is_fallback": false
       }
     ],
     "information_needs": [
       {
-        "theme": "Product Reviews & Ratings",
-        "count": 47,
-        "average_rating": 2.9,
+        "theme": "Price Comparison",
+        "count": 3,
+        "average_rating": 1.67,
         "evidence": [
-          "Review by Herculas:There are no reviews or ratings to help decide if a product is actually good. Buying new brands feels like a gamble."
+          "Review by Techno Fete: Lately there are no offers and so many products required are missing, other places offer the same price and have much more variety. And please remove the name \"10 mins delivery\", i understand for safety u r extending the time but these it is taking 45 mins to an hour for delivery 🙁",
+          "Review by Harsh Udasi: this app is not giving any offers"
         ],
-        "is_fallback": true
-      },
-      {
-        "theme": "Detailed Product Descriptions",
-        "count": 32,
-        "average_rating": 3.2,
-        "evidence": [
-          "Review by Daniel:The wrong product arrived with no expiry date visible. The listing didn't match what I received."
-        ],
-        "is_fallback": true
+        "is_fallback": false
       },
       {
         "theme": "Product Quality Assurance",
-        "count": 28,
-        "average_rating": 2.5,
+        "count": 1,
+        "average_rating": 1.0,
         "evidence": [
+          "Review by Mansi Arya: Very disappointing experience with Zepto. On 28 July, I ordered Bingo Cheese Nachos, but I received Haldiram's Mexilla instead. Due to my busy schedule, I could only check the order later. On 29 July, I also received paneer that had a sour taste, making me concerned about its quality. When I contacted customer support for both issues, they refused to help because the replacement/refund window had expired, even though these problems were not my fault.",
           "Review by Sumit:Always gives rotten and smelly products. Every time I order vegetables or paneer, they're spoiled."
         ],
-        "is_fallback": true
+        "is_fallback": false
+      },
+      {
+        "theme": "Return & Refund Policy",
+        "count": 1,
+        "average_rating": 1.0,
+        "evidence": [
+          "Review by Saswati Guha: no cancellation option and during rush hours they take advantage and deliver twice and for you to pay"
+        ],
+        "is_fallback": false
       }
     ],
     "top_frustrations": [
       {
         "theme": "App Usability Problems",
         "count": 38,
-        "average_rating": 1.9,
+        "average_rating": 2.44,
         "evidence": [
+          "Review by DeathMa5754m: I am unable to find any super saver mode or depot cafe even after deleting and reapplying my id again and again",
+          "Review by adom king: refarel link not showing",
           "Post by u/quick_commerce_user: Zepto homepage is too cluttered with reorders. Every time I open the Zepto app, all I see is the 'Buy Again' section and my past orders. It makes it really hard to discover new categories or explore products outside of my daily groceries.",
           "Post by u/healthy_shopper: Why is it so hard to find healthy/organic categories? I usually order organic milk and vegetables, but finding them requires active search. There is no category recommendations or banners for healthy alternatives on the main category page."
         ],
-        "root_cause": "The app's content prioritization system fails to balance reorder convenience with new product and category discoverability.",
+        "root_cause": "Suboptimal information architecture and UI design impede user discovery of features, categories, and key information.",
         "is_fallback": false
       },
       {
         "theme": "Delivery Issues",
         "count": 35,
-        "average_rating": 2.1,
-        "root_cause": "Inaccurate delivery time estimates fail to account for local traffic patterns.",
+        "average_rating": 2.5,
         "evidence": [
+          "Review by Saswati Guha: no cancellation option and during rush hours they take advantage and deliver twice and for you to pay",
+          "Review by Sanketh Bennur: deliveries are slow and delayed. but overall, great catalogue, quality of items and service.",
           "Review by Janu appu: I've always had a terrible experience with Zepto. The delivery times are consistently longer than advertised—my last order took 1 hour and 30 minutes. There are always missing items or different products delivered, and getting a refund means spending another 20–40 minutes chatting with support."
         ],
-        "is_fallback": true
+        "root_cause": "Operational failures in order processing and fulfillment cause duplicate deliveries and delays.",
+        "is_fallback": false
       },
       {
         "theme": "Poor Product Quality",
         "count": 30,
-        "average_rating": 1.8,
-        "root_cause": "Local hub handlers do not separate fresh fruits from heavy items, causing bruising.",
+        "average_rating": 1.0,
         "evidence": [
+          "Review by Mansi Arya: Very disappointing experience with Zepto. On 28 July, I ordered Bingo Cheese Nachos, but I received Haldiram's Mexilla instead. Due to my busy schedule, I could only check the order later. On 29 July, I also received paneer that had a sour taste, making me concerned about its quality. When I contacted customer support for both issues, they refused to help because the replacement/refund window had expired, even though these problems were not my fault.",
           "Review by Reddit User: I've faced delayed deliveries, missing items, incorrect items, and quality-related concerns. The replacement product had the same quality issue as the original, making me question Zepto's storage, handling, and quality-control process."
         ],
-        "is_fallback": true
+        "root_cause": "Deficient quality control and inventory management systems allow incorrect and spoiled products to be dispatched.",
+        "is_fallback": false
       }
     ],
     "underserved_segments": [
@@ -333,12 +402,34 @@
     "unmet_needs": [
       {
         "theme": "Personalized Category Recommendations",
-        "count": 3,
-        "average_rating": 4.0,
+        "count": 5,
+        "average_rating": 2.0,
         "evidence": [
+          "Review by Techno Fete: Lately there are no offers and so many products required are missing, other places offer the same price and have much more variety. And please remove the name \"10 mins delivery\", i understand for safety u r extending the time but these it is taking 45 mins to an hour for delivery 🙁",
           "Post by u/quick_commerce_user: Zepto homepage is too cluttered with reorders. Every time I open the Zepto app, all I see is the 'Buy Again' section and my past orders. It makes it really hard to discover new categories or explore products outside of my daily groceries.",
-          "Post by u/healthy_shopper: Why is it so hard to find healthy/organic categories? I usually order organic milk and vegetables, but finding them requires active search. There is no category recommendations or banners for healthy alternatives on the main category page.",
           "Review by Techno Fete: Lately there are no offers and so many products required are missing, other places offer the same price and have much more variety. And please remove the name \"10 mins delivery\", i understand for safety u r extending the time but these it is taking 45 mins to an hour for delivery "
+        ],
+        "opportunity_score": 20.0,
+        "is_fallback": false
+      },
+      {
+        "theme": "Better Search & Filters",
+        "count": 3,
+        "average_rating": 2.67,
+        "evidence": [
+          "Review by DeathMa5754m: I am unable to find any super saver mode or depot cafe even after deleting and reapplying my id again and again",
+          "Review by guru nath: vey useful and perfect app but can not find total bill amount very easily"
+        ],
+        "opportunity_score": 9.99,
+        "is_fallback": false
+      },
+      {
+        "theme": "Loyalty Rewards for Exploration",
+        "count": 2,
+        "average_rating": 3.0,
+        "evidence": [
+          "Post by u/lazy_orderer: Autopilot reordering kills exploration. I am in the habit of just checking out my cart in 2 clicks using the quick reorder feature. I never browse anything new unless there's a strong discount or incentive.",
+          "Review by Harsh Udasi: this app is not giving any offers"
         ],
         "opportunity_score": 6.0,
         "is_fallback": false
@@ -355,16 +446,35 @@
         "is_fallback": false
       },
       {
-        "theme": "Loyalty Rewards for Exploration",
+        "theme": "Contextual Discovery Prompts",
         "count": 1,
-        "average_rating": 0.0,
+        "average_rating": 3.0,
         "evidence": [
-          "Post by u/lazy_orderer: Autopilot reordering kills exploration. I am in the habit of just checking out my cart in 2 clicks using the quick reorder feature. I never browse anything new unless there's a strong discount or incentive."
+          "Review by Adithyalatha12: this app doesn't even show refer option... whenever I try to refer someone it doesn't shows 🥲🥲"
         ],
-        "opportunity_score": 6.0,
+        "opportunity_score": 3.0,
         "is_fallback": false
       }
     ],
-    "opportunities": []
+    "opportunities": [
+      {
+        "problem": "Users struggle to discover relevant product categories because category listings are buried and recommendations feel generic, leading to low exploration rates.",
+        "evidence": "Analysis identified 'Poor Category Visibility' and 'Irrelevant Recommendations' as top exploration barriers. Health & Wellness seekers and Deal-Driven Explorers reported difficulty finding items beyond their usual purchases.",
+        "suggested_ai_solution": "Deploy an AI-driven personalized category recommendation engine that surfaces high‑relevance categories on the home screen and in push notifications, using browsing history, purchase patterns, and contextual signals.",
+        "expected_impact": "Increase category exploration by ~20%, boost cross‑category purchase frequency, and improve overall user retention."
+      },
+      {
+        "problem": "There is no clear incentive for users to explore new categories, resulting in stagnant shopping habits and missed upsell opportunities.",
+        "evidence": "The 'No Incentive to Explore' barrier topped the list, and users expressed desire for 'Loyalty Rewards for Exploration' as an unmet need.",
+        "suggested_ai_solution": "Introduce an AI‑powered exploration rewards program that awards points or discounts when users browse or purchase from recommended new categories, dynamically adjusting reward levels based on user segment (e.g., health‑focused or deal‑driven).",
+        "expected_impact": "Boost exploration-driven transactions by ~15%, increase loyalty program activity, and lift average order value."
+      },
+      {
+        "problem": "Search and filter functionality is inaccurate and fails to surface niche health & wellness or deal‑focused products, causing frustration and abandoned searches.",
+        "evidence": "Users cited 'App Usability Problems' and a need for 'Better Search & Filters'. Health & Wellness seekers reported difficulty finding specific items.",
+        "suggested_ai_solution": "Implement an AI‑enhanced semantic search and dynamic filter generation that understands intent, synonyms, and product attributes, tailoring results to individual preferences and segment‑specific priorities.",
+        "expected_impact": "Reduce search abandonment by 25%, increase conversion on filtered searches, and improve satisfaction among underserved segments."
+      }
+    ]
   }
 }
